@@ -48,9 +48,13 @@ public class Registrarse extends javax.swing.JFrame {
         jTContrasena = new javax.swing.JTextField();
         jTConfirmacionContrasena = new javax.swing.JTextField();
         jLConfirmacionContrasena = new javax.swing.JLabel();
+        lblUp = new javax.swing.JLabel();
+        lblDataSesion = new javax.swing.JLabel();
+        lblDataSesion1 = new javax.swing.JLabel();
         jLImagen = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Registro");
         setMaximumSize(new java.awt.Dimension(760, 505));
         setMinimumSize(new java.awt.Dimension(760, 505));
         setResizable(false);
@@ -59,72 +63,103 @@ public class Registrarse extends javax.swing.JFrame {
         jBInicio.setBackground(new java.awt.Color(241, 234, 226));
         jBInicio.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jBInicio.setForeground(new java.awt.Color(89, 17, 18));
+        jBInicio.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resources/menuPrin.png"))); // NOI18N
         jBInicio.setText("Inicio");
+        jBInicio.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        jBInicio.setHorizontalTextPosition(javax.swing.SwingConstants.LEFT);
         jBInicio.setMaximumSize(new java.awt.Dimension(130, 40));
         jBInicio.setMinimumSize(new java.awt.Dimension(130, 40));
+        jBInicio.setOpaque(false);
         jBInicio.setPreferredSize(new java.awt.Dimension(130, 40));
         jBInicio.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jBInicioActionPerformed(evt);
             }
         });
-        getContentPane().add(jBInicio, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 10, -1, -1));
+        getContentPane().add(jBInicio, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 10, 140, -1));
 
         jBConfirmar.setBackground(new java.awt.Color(241, 234, 226));
         jBConfirmar.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jBConfirmar.setForeground(new java.awt.Color(89, 17, 18));
-        jBConfirmar.setText("Confirmar");
+        jBConfirmar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resources/checked2.png"))); // NOI18N
+        jBConfirmar.setText("Confirmar   ");
+        jBConfirmar.setHorizontalTextPosition(javax.swing.SwingConstants.LEFT);
         jBConfirmar.setMaximumSize(new java.awt.Dimension(130, 40));
         jBConfirmar.setMinimumSize(new java.awt.Dimension(130, 40));
+        jBConfirmar.setOpaque(false);
         jBConfirmar.setPreferredSize(new java.awt.Dimension(130, 40));
-        getContentPane().add(jBConfirmar, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 430, -1, -1));
+        jBConfirmar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jBConfirmarActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jBConfirmar, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 360, 200, -1));
 
         jLTitulo.setFont(new java.awt.Font("Tahoma", 1, 36)); // NOI18N
         jLTitulo.setForeground(new java.awt.Color(241, 234, 226));
+        jLTitulo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLTitulo.setText("Realizar Registro");
-        getContentPane().add(jLTitulo, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 80, -1, -1));
+        getContentPane().add(jLTitulo, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 120, 510, -1));
 
-        jLNombre.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLNombre.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         jLNombre.setForeground(new java.awt.Color(241, 234, 226));
-        jLNombre.setText("Nombre");
-        getContentPane().add(jLNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 200, -1, -1));
+        jLNombre.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        jLNombre.setText("Nombre:");
+        getContentPane().add(jLNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 190, 230, -1));
 
-        jLContrasena.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLContrasena.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         jLContrasena.setForeground(new java.awt.Color(241, 234, 226));
-        jLContrasena.setText("Contraseña");
-        getContentPane().add(jLContrasena, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 280, -1, -1));
+        jLContrasena.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        jLContrasena.setText("Contraseña:");
+        getContentPane().add(jLContrasena, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 250, 230, -1));
 
+        jTNombre.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jTNombre.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTNombreActionPerformed(evt);
             }
         });
-        getContentPane().add(jTNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 200, 160, -1));
+        getContentPane().add(jTNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 190, 200, -1));
 
+        jTContrasena.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jTContrasena.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTContrasenaActionPerformed(evt);
             }
         });
-        getContentPane().add(jTContrasena, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 280, 160, -1));
+        getContentPane().add(jTContrasena, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 250, 200, -1));
 
+        jTConfirmacionContrasena.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jTConfirmacionContrasena.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTConfirmacionContrasenaActionPerformed(evt);
             }
         });
-        getContentPane().add(jTConfirmacionContrasena, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 350, 160, -1));
+        getContentPane().add(jTConfirmacionContrasena, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 310, 200, -1));
 
-        jLConfirmacionContrasena.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLConfirmacionContrasena.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLConfirmacionContrasena.setForeground(new java.awt.Color(241, 234, 226));
-        jLConfirmacionContrasena.setText("Confirmar Contraseña");
-        getContentPane().add(jLConfirmacionContrasena, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 360, -1, -1));
+        jLConfirmacionContrasena.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        jLConfirmacionContrasena.setText("Confirmar Contraseña:");
+        getContentPane().add(jLConfirmacionContrasena, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 310, 230, 30));
+
+        lblUp.setBackground(new java.awt.Color(255, 235, 238));
+        lblUp.setOpaque(true);
+        getContentPane().add(lblUp, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 760, 60));
+
+        lblDataSesion.setBackground(new java.awt.Color(167, 39, 32));
+        lblDataSesion.setOpaque(true);
+        getContentPane().add(lblDataSesion, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 100, 510, 330));
+
+        lblDataSesion1.setBackground(new java.awt.Color(98, 39, 32));
+        lblDataSesion1.setOpaque(true);
+        getContentPane().add(lblDataSesion1, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 120, 510, 330));
 
         jLImagen.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resources/vinoConBlanco.jpg"))); // NOI18N
         jLImagen.setMaximumSize(new java.awt.Dimension(760, 505));
         jLImagen.setMinimumSize(new java.awt.Dimension(760, 505));
         jLImagen.setPreferredSize(new java.awt.Dimension(760, 505));
-        getContentPane().add(jLImagen, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 740, 480));
+        getContentPane().add(jLImagen, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 760, 480));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -147,6 +182,10 @@ public class Registrarse extends javax.swing.JFrame {
         p.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_jBInicioActionPerformed
+
+    private void jBConfirmarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBConfirmarActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jBConfirmarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -198,5 +237,8 @@ public class Registrarse extends javax.swing.JFrame {
     private javax.swing.JTextField jTConfirmacionContrasena;
     private javax.swing.JTextField jTContrasena;
     private javax.swing.JTextField jTNombre;
+    private javax.swing.JLabel lblDataSesion;
+    private javax.swing.JLabel lblDataSesion1;
+    private javax.swing.JLabel lblUp;
     // End of variables declaration//GEN-END:variables
 }

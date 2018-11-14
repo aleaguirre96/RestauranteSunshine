@@ -46,9 +46,12 @@ public class VerMenu extends javax.swing.JFrame {
         jBInicio = new javax.swing.JButton();
         jPProductos = new javax.swing.JScrollPane();
         jTableProductos = new javax.swing.JTable();
+        lblUp = new javax.swing.JLabel();
+        shadowTable1 = new javax.swing.JLabel();
         jLImagen = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Menú Restaurante");
         setMaximumSize(new java.awt.Dimension(760, 505));
         setMinimumSize(new java.awt.Dimension(760, 505));
         setResizable(false);
@@ -57,52 +60,66 @@ public class VerMenu extends javax.swing.JFrame {
         jBCombos.setBackground(new java.awt.Color(241, 234, 226));
         jBCombos.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jBCombos.setForeground(new java.awt.Color(89, 17, 18));
+        jBCombos.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resources/combo.png"))); // NOI18N
         jBCombos.setText("Combos");
         jBCombos.setMaximumSize(new java.awt.Dimension(130, 40));
         jBCombos.setMinimumSize(new java.awt.Dimension(130, 40));
+        jBCombos.setOpaque(false);
         jBCombos.setPreferredSize(new java.awt.Dimension(130, 40));
-        getContentPane().add(jBCombos, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 10, -1, -1));
+        getContentPane().add(jBCombos, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 10, -1, -1));
 
         jBPostres.setBackground(new java.awt.Color(241, 234, 226));
         jBPostres.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jBPostres.setForeground(new java.awt.Color(89, 17, 18));
+        jBPostres.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resources/dessert.png"))); // NOI18N
         jBPostres.setText("Postres");
         jBPostres.setMaximumSize(new java.awt.Dimension(130, 40));
         jBPostres.setMinimumSize(new java.awt.Dimension(130, 40));
+        jBPostres.setOpaque(false);
         jBPostres.setPreferredSize(new java.awt.Dimension(130, 40));
-        getContentPane().add(jBPostres, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 10, -1, -1));
+        getContentPane().add(jBPostres, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 10, -1, -1));
 
         jBBebidas.setBackground(new java.awt.Color(241, 234, 226));
         jBBebidas.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jBBebidas.setForeground(new java.awt.Color(89, 17, 18));
+        jBBebidas.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resources/drink.png"))); // NOI18N
         jBBebidas.setText("Bebidas");
         jBBebidas.setMaximumSize(new java.awt.Dimension(130, 40));
         jBBebidas.setMinimumSize(new java.awt.Dimension(130, 40));
+        jBBebidas.setOpaque(false);
         jBBebidas.setPreferredSize(new java.awt.Dimension(130, 40));
-        getContentPane().add(jBBebidas, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 10, -1, -1));
+        getContentPane().add(jBBebidas, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 10, -1, -1));
 
         jBComidas.setBackground(new java.awt.Color(241, 234, 226));
         jBComidas.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jBComidas.setForeground(new java.awt.Color(89, 17, 18));
+        jBComidas.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resources/food.png"))); // NOI18N
         jBComidas.setText("Comidas");
         jBComidas.setMaximumSize(new java.awt.Dimension(130, 40));
         jBComidas.setMinimumSize(new java.awt.Dimension(130, 40));
+        jBComidas.setOpaque(false);
         jBComidas.setPreferredSize(new java.awt.Dimension(130, 40));
-        getContentPane().add(jBComidas, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 10, -1, -1));
+        getContentPane().add(jBComidas, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 10, -1, -1));
 
         jBInicio.setBackground(new java.awt.Color(241, 234, 226));
         jBInicio.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jBInicio.setForeground(new java.awt.Color(89, 17, 18));
+        jBInicio.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resources/menuPrin.png"))); // NOI18N
         jBInicio.setText("Inicio");
+        jBInicio.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        jBInicio.setHorizontalTextPosition(javax.swing.SwingConstants.LEFT);
         jBInicio.setMaximumSize(new java.awt.Dimension(130, 40));
         jBInicio.setMinimumSize(new java.awt.Dimension(130, 40));
+        jBInicio.setOpaque(false);
         jBInicio.setPreferredSize(new java.awt.Dimension(130, 40));
         jBInicio.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jBInicioActionPerformed(evt);
             }
         });
-        getContentPane().add(jBInicio, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 10, -1, -1));
+        getContentPane().add(jBInicio, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 10, 140, -1));
+
+        jPProductos.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 204, 204), 2));
 
         jTableProductos.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -117,13 +134,21 @@ public class VerMenu extends javax.swing.JFrame {
         ));
         jPProductos.setViewportView(jTableProductos);
 
-        getContentPane().add(jPProductos, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 80, -1, 360));
+        getContentPane().add(jPProductos, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 80, 550, 370));
+
+        lblUp.setBackground(new java.awt.Color(255, 235, 238));
+        lblUp.setOpaque(true);
+        getContentPane().add(lblUp, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 760, 60));
+
+        shadowTable1.setBackground(new java.awt.Color(152, 50, 39));
+        shadowTable1.setOpaque(true);
+        getContentPane().add(shadowTable1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 70, 570, 390));
 
         jLImagen.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resources/vinoConBlanco.jpg"))); // NOI18N
         jLImagen.setMaximumSize(new java.awt.Dimension(760, 505));
         jLImagen.setMinimumSize(new java.awt.Dimension(760, 505));
         jLImagen.setPreferredSize(new java.awt.Dimension(760, 505));
-        getContentPane().add(jLImagen, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 760, -1));
+        getContentPane().add(jLImagen, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 760, 490));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -183,5 +208,7 @@ public class VerMenu extends javax.swing.JFrame {
     private javax.swing.JLabel jLImagen;
     private javax.swing.JScrollPane jPProductos;
     private javax.swing.JTable jTableProductos;
+    private javax.swing.JLabel lblUp;
+    private javax.swing.JLabel shadowTable1;
     // End of variables declaration//GEN-END:variables
 }

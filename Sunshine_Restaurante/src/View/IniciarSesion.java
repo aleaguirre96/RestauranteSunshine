@@ -40,15 +40,19 @@ public class IniciarSesion extends javax.swing.JFrame {
     private void initComponents() {
 
         jBInicio = new javax.swing.JButton();
+        lblUp = new javax.swing.JLabel();
         jLConfirmar = new javax.swing.JButton();
         jLTitulo = new javax.swing.JLabel();
         jLNombre = new javax.swing.JLabel();
         jLContrasena = new javax.swing.JLabel();
         jTNombre = new javax.swing.JTextField();
         jtContrasena = new javax.swing.JTextField();
+        lblDataSesion = new javax.swing.JLabel();
+        lblDataSesion1 = new javax.swing.JLabel();
         jLImagen = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Inicio de Sesion");
         setMaximumSize(new java.awt.Dimension(760, 505));
         setMinimumSize(new java.awt.Dimension(760, 505));
         setPreferredSize(new java.awt.Dimension(760, 505));
@@ -58,50 +62,80 @@ public class IniciarSesion extends javax.swing.JFrame {
         jBInicio.setBackground(new java.awt.Color(241, 234, 226));
         jBInicio.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jBInicio.setForeground(new java.awt.Color(89, 17, 18));
+        jBInicio.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resources/menuPrin.png"))); // NOI18N
         jBInicio.setText("Inicio");
+        jBInicio.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        jBInicio.setHorizontalTextPosition(javax.swing.SwingConstants.LEFT);
         jBInicio.setMaximumSize(new java.awt.Dimension(130, 40));
         jBInicio.setMinimumSize(new java.awt.Dimension(130, 40));
+        jBInicio.setOpaque(false);
         jBInicio.setPreferredSize(new java.awt.Dimension(130, 40));
         jBInicio.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jBInicioActionPerformed(evt);
             }
         });
-        getContentPane().add(jBInicio, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 10, -1, -1));
+        getContentPane().add(jBInicio, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 10, 140, -1));
 
+        lblUp.setBackground(new java.awt.Color(255, 235, 238));
+        lblUp.setOpaque(true);
+        getContentPane().add(lblUp, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 760, 60));
+
+        jLConfirmar.setBackground(new java.awt.Color(241, 234, 226));
         jLConfirmar.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLConfirmar.setForeground(new java.awt.Color(89, 17, 18));
+        jLConfirmar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resources/checked2.png"))); // NOI18N
         jLConfirmar.setText("Confirmar");
+        jLConfirmar.setHorizontalTextPosition(javax.swing.SwingConstants.LEFT);
         jLConfirmar.setMaximumSize(new java.awt.Dimension(130, 40));
         jLConfirmar.setMinimumSize(new java.awt.Dimension(130, 40));
+        jLConfirmar.setOpaque(false);
         jLConfirmar.setPreferredSize(new java.awt.Dimension(130, 40));
-        getContentPane().add(jLConfirmar, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 390, -1, -1));
+        jLConfirmar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jLConfirmarActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jLConfirmar, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 320, 230, -1));
 
         jLTitulo.setFont(new java.awt.Font("Tahoma", 1, 36)); // NOI18N
         jLTitulo.setForeground(new java.awt.Color(241, 234, 226));
+        jLTitulo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLTitulo.setText("Iniciar Sesion");
-        getContentPane().add(jLTitulo, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 90, -1, -1));
+        getContentPane().add(jLTitulo, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 110, 510, 70));
 
-        jLNombre.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLNombre.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         jLNombre.setForeground(new java.awt.Color(241, 234, 226));
-        jLNombre.setText("Nombre");
-        getContentPane().add(jLNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 240, -1, -1));
+        jLNombre.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        jLNombre.setText("Nombre:");
+        getContentPane().add(jLNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 210, 190, -1));
 
-        jLContrasena.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLContrasena.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         jLContrasena.setForeground(new java.awt.Color(241, 234, 226));
-        jLContrasena.setText("Contrseña");
-        getContentPane().add(jLContrasena, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 370, -1, -1));
+        jLContrasena.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        jLContrasena.setText("Contraseña:");
+        getContentPane().add(jLContrasena, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 260, 190, -1));
 
         jTNombre.setBackground(new java.awt.Color(241, 234, 226));
-        getContentPane().add(jTNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 230, 180, -1));
+        jTNombre.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        getContentPane().add(jTNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 210, 230, -1));
 
         jtContrasena.setBackground(new java.awt.Color(241, 234, 226));
+        jtContrasena.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jtContrasena.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jtContrasenaActionPerformed(evt);
             }
         });
-        getContentPane().add(jtContrasena, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 360, 170, -1));
+        getContentPane().add(jtContrasena, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 260, 230, -1));
+
+        lblDataSesion.setBackground(new java.awt.Color(167, 39, 32));
+        lblDataSesion.setOpaque(true);
+        getContentPane().add(lblDataSesion, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 100, 510, 330));
+
+        lblDataSesion1.setBackground(new java.awt.Color(98, 39, 32));
+        lblDataSesion1.setOpaque(true);
+        getContentPane().add(lblDataSesion1, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 120, 510, 330));
 
         jLImagen.setBackground(new java.awt.Color(241, 234, 226));
         jLImagen.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resources/vinoConBlanco.jpg"))); // NOI18N
@@ -112,6 +146,7 @@ public class IniciarSesion extends javax.swing.JFrame {
 
     private void jtContrasenaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jtContrasenaActionPerformed
         // TODO add your handling code here:
+        
     }//GEN-LAST:event_jtContrasenaActionPerformed
 
     private void jBInicioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBInicioActionPerformed
@@ -120,6 +155,13 @@ public class IniciarSesion extends javax.swing.JFrame {
         p.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_jBInicioActionPerformed
+
+    private void jLConfirmarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jLConfirmarActionPerformed
+        // TODO add your handling code here:
+        RealizarCompra realizar = Controlador.getCtr().getRealizarCompra();
+        realizar.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_jLConfirmarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -170,5 +212,8 @@ public class IniciarSesion extends javax.swing.JFrame {
     private javax.swing.JLabel jLTitulo;
     private javax.swing.JTextField jTNombre;
     private javax.swing.JTextField jtContrasena;
+    private javax.swing.JLabel lblDataSesion;
+    private javax.swing.JLabel lblDataSesion1;
+    private javax.swing.JLabel lblUp;
     // End of variables declaration//GEN-END:variables
 }

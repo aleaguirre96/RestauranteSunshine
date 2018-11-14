@@ -16,6 +16,12 @@ import View.VerMenu;
  * @author danip
  */
 public class Controlador {
+    
+    public static Controlador ctr = new Controlador();
+    private Principal principal = new Principal();
+    private IniciarSesion iniciarSesion = new IniciarSesion();
+    private RealizarCompra realizarCompra = new RealizarCompra();
+    private Registrarse registrarse = new Registrarse();
 
     public IniciarSesion getIniciarSesion() {
         return iniciarSesion;
@@ -26,11 +32,7 @@ public class Controlador {
     }
     private Controlador(){}
     
-    public static Controlador ctr = new Controlador();
-    Principal principal = new Principal();
-    IniciarSesion iniciarSesion = new IniciarSesion();
-    RealizarCompra realizarCompra = new RealizarCompra();
-    Registrarse registrarse = new Registrarse();
+
 
     public static Controlador getCtr() {
         return ctr;

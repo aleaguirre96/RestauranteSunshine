@@ -45,9 +45,11 @@ public class Principal extends javax.swing.JFrame {
         jLabelTitulo = new javax.swing.JLabel();
         jBIniciarSesion = new javax.swing.JButton();
         jBRegistrarse = new javax.swing.JButton();
+        lblUp = new javax.swing.JLabel();
         jLImagen = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Menú Principal");
         setMaximumSize(new java.awt.Dimension(760, 505));
         setMinimumSize(new java.awt.Dimension(760, 505));
         setPreferredSize(new java.awt.Dimension(760, 505));
@@ -57,49 +59,61 @@ public class Principal extends javax.swing.JFrame {
         jBMEnu.setBackground(new java.awt.Color(241, 234, 226));
         jBMEnu.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jBMEnu.setForeground(new java.awt.Color(89, 17, 18));
+        jBMEnu.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resources/resMenu.png"))); // NOI18N
         jBMEnu.setText("Ver Menú");
         jBMEnu.setMaximumSize(new java.awt.Dimension(130, 40));
         jBMEnu.setMinimumSize(new java.awt.Dimension(130, 40));
+        jBMEnu.setOpaque(false);
         jBMEnu.setPreferredSize(new java.awt.Dimension(130, 40));
         jBMEnu.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jBMEnuActionPerformed(evt);
             }
         });
-        getContentPane().add(jBMEnu, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 0, -1, -1));
+        getContentPane().add(jBMEnu, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 10, 160, 40));
 
-        jLabelTitulo.setFont(new java.awt.Font("Tahoma", 1, 48)); // NOI18N
+        jLabelTitulo.setFont(new java.awt.Font("Tahoma", 1, 56)); // NOI18N
         jLabelTitulo.setForeground(new java.awt.Color(241, 234, 226));
+        jLabelTitulo.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         jLabelTitulo.setText("Sunshine ");
-        getContentPane().add(jLabelTitulo, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 130, -1, -1));
+        getContentPane().add(jLabelTitulo, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 130, 390, -1));
 
         jBIniciarSesion.setBackground(new java.awt.Color(241, 234, 226));
         jBIniciarSesion.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jBIniciarSesion.setForeground(new java.awt.Color(89, 17, 18));
+        jBIniciarSesion.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resources/iniSecc.png"))); // NOI18N
         jBIniciarSesion.setText("IniciarSesion");
+        jBIniciarSesion.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
         jBIniciarSesion.setMaximumSize(new java.awt.Dimension(130, 40));
         jBIniciarSesion.setMinimumSize(new java.awt.Dimension(130, 40));
+        jBIniciarSesion.setOpaque(false);
         jBIniciarSesion.setPreferredSize(new java.awt.Dimension(130, 40));
         jBIniciarSesion.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jBIniciarSesionActionPerformed(evt);
             }
         });
-        getContentPane().add(jBIniciarSesion, new org.netbeans.lib.awtextra.AbsoluteConstraints(621, 0, -1, -1));
+        getContentPane().add(jBIniciarSesion, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 10, 160, -1));
 
         jBRegistrarse.setBackground(new java.awt.Color(241, 234, 226));
         jBRegistrarse.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jBRegistrarse.setForeground(new java.awt.Color(89, 17, 18));
+        jBRegistrarse.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resources/addUser.png"))); // NOI18N
         jBRegistrarse.setText("Registrarse");
         jBRegistrarse.setMaximumSize(new java.awt.Dimension(130, 40));
         jBRegistrarse.setMinimumSize(new java.awt.Dimension(130, 40));
+        jBRegistrarse.setOpaque(false);
         jBRegistrarse.setPreferredSize(new java.awt.Dimension(130, 40));
         jBRegistrarse.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jBRegistrarseActionPerformed(evt);
             }
         });
-        getContentPane().add(jBRegistrarse, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 0, -1, -1));
+        getContentPane().add(jBRegistrarse, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 10, 160, -1));
+
+        lblUp.setBackground(new java.awt.Color(255, 235, 238));
+        lblUp.setOpaque(true);
+        getContentPane().add(lblUp, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 790, 60));
 
         jLImagen.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resources/background-150p-01.jpg"))); // NOI18N
         jLImagen.setMaximumSize(new java.awt.Dimension(760, 505));
@@ -173,5 +187,6 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JButton jBRegistrarse;
     private javax.swing.JLabel jLImagen;
     private javax.swing.JLabel jLabelTitulo;
+    private javax.swing.JLabel lblUp;
     // End of variables declaration//GEN-END:variables
 }
