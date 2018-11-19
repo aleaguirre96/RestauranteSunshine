@@ -230,7 +230,7 @@ public class RealizarCompra extends javax.swing.JFrame {
         jLImagen.setMaximumSize(new java.awt.Dimension(130, 40));
         jLImagen.setMinimumSize(new java.awt.Dimension(130, 40));
         jLImagen.setPreferredSize(new java.awt.Dimension(130, 40));
-        getContentPane().add(jLImagen, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 760, 510));
+        getContentPane().add(jLImagen, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 760, 520));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents

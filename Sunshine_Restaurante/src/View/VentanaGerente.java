@@ -110,30 +110,30 @@ public class VentanaGerente extends javax.swing.JFrame {
         jPGerenteGeneral.setLayout(jPGerenteGeneralLayout);
         jPGerenteGeneralLayout.setHorizontalGroup(
             jPGerenteGeneralLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPGerenteGeneralLayout.createSequentialGroup()
-                .addGap(94, 94, 94)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPGerenteGeneralLayout.createSequentialGroup()
+                .addContainerGap(74, Short.MAX_VALUE)
                 .addGroup(jPGerenteGeneralLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jBVerReporteGeneral, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jBVerReporteMensual, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jBAgregarProducto, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jBEditarMenu, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jBEditarCombos, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap(43, Short.MAX_VALUE))
+                    .addComponent(jBEditarCombos, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(66, 66, 66))
         );
         jPGerenteGeneralLayout.setVerticalGroup(
             jPGerenteGeneralLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPGerenteGeneralLayout.createSequentialGroup()
-                .addGap(42, 42, 42)
+                .addGap(52, 52, 52)
                 .addComponent(jBVerReporteMensual)
-                .addGap(33, 33, 33)
+                .addGap(18, 18, 18)
                 .addComponent(jBVerReporteGeneral)
-                .addGap(41, 41, 41)
+                .addGap(18, 18, 18)
                 .addComponent(jBAgregarProducto)
-                .addGap(30, 30, 30)
+                .addGap(18, 18, 18)
                 .addComponent(jBEditarMenu)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jBEditarCombos, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(39, 39, 39))
+                .addGap(18, 18, 18)
+                .addComponent(jBEditarCombos)
+                .addContainerGap(51, Short.MAX_VALUE))
         );
 
         getContentPane().add(jPGerenteGeneral, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 130, 310, 340));
