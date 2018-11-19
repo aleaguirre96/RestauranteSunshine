@@ -7,6 +7,7 @@
 package View;
 
 import Controller.Controlador;
+import javax.swing.JPanel;
 
 /**
  *
@@ -17,8 +18,12 @@ public class Reportes extends javax.swing.JFrame {
     /** Creates new form ReporteSucursal */
     public Reportes() {
         initComponents();
+        
     }
 
+    public JPanel getjPSeleccionSucursal() {
+        return jPSeleccionSucursal;
+    }
     /** This method is called from within the constructor to
      * initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is
@@ -30,12 +35,9 @@ public class Reportes extends javax.swing.JFrame {
 
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
-        jPanel1 = new javax.swing.JPanel();
+        jPSeleccionSucursal = new javax.swing.JPanel();
         jComboBox2 = new javax.swing.JComboBox<>();
         jButton5 = new javax.swing.JButton();
-        jPanel2 = new javax.swing.JPanel();
-        jButton3 = new javax.swing.JButton();
-        jButton4 = new javax.swing.JButton();
         jBInicio = new javax.swing.JButton();
         jLImagen = new javax.swing.JLabel();
 
@@ -59,32 +61,16 @@ public class Reportes extends javax.swing.JFrame {
 
         getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 130, 300, 280));
 
-        jPanel1.setBackground(new java.awt.Color(89, 17, 18));
-        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        jPSeleccionSucursal.setBackground(new java.awt.Color(89, 17, 18));
+        jPSeleccionSucursal.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Sucursal1", "Sucursal 2", "Sucursal 3" }));
-        jPanel1.add(jComboBox2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 10, 180, -1));
+        jPSeleccionSucursal.add(jComboBox2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 10, 180, -1));
 
         jButton5.setText("Ver");
-        jPanel1.add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 80, 180, -1));
+        jPSeleccionSucursal.add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 80, 180, -1));
 
-        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 290, 180, 150));
-
-        jPanel2.setBackground(new java.awt.Color(89, 17, 18));
-        jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        jButton3.setText("Ver Reporte por Sucursal");
-        jPanel2.add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 60, 180, -1));
-
-        jButton4.setText("Ver Reporte Mensual");
-        jButton4.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton4ActionPerformed(evt);
-            }
-        });
-        jPanel2.add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, 180, -1));
-
-        getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 150, 220, 130));
+        getContentPane().add(jPSeleccionSucursal, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 130, 180, 150));
 
         jBInicio.setBackground(new java.awt.Color(241, 234, 226));
         jBInicio.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
@@ -113,10 +99,6 @@ public class Reportes extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton4ActionPerformed
 
     private void jBInicioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBInicioActionPerformed
         // TODO add your handling code here:
@@ -163,13 +145,10 @@ public class Reportes extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jBInicio;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton5;
     private javax.swing.JComboBox<String> jComboBox2;
     private javax.swing.JLabel jLImagen;
-    private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel2;
+    private javax.swing.JPanel jPSeleccionSucursal;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable jTable1;
     // End of variables declaration//GEN-END:variables

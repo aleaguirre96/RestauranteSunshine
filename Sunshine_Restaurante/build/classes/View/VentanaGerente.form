@@ -44,7 +44,7 @@
       </Properties>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-          <AbsoluteConstraints x="160" y="80" width="440" height="60"/>
+          <AbsoluteConstraints x="160" y="60" width="440" height="60"/>
         </Constraint>
       </Constraints>
     </Component>
@@ -77,6 +77,9 @@
         </Property>
         <Property name="text" type="java.lang.String" value="Reporte de Sucursal"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jBReportePorSucursalActionPerformed"/>
+      </Events>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
           <AbsoluteConstraints x="90" y="180" width="190" height="-1"/>
@@ -163,6 +166,9 @@
             </Property>
             <Property name="text" type="java.lang.String" value="Ver Reporte General"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jBVerReporteGeneralActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JButton" name="jBAgregarProducto">
           <Properties>
@@ -177,6 +183,9 @@
             </Property>
             <Property name="text" type="java.lang.String" value="Agregar Producto"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jBAgregarProductoActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JButton" name="jBEditarMenu">
           <Properties>
@@ -191,6 +200,9 @@
             </Property>
             <Property name="text" type="java.lang.String" value="Editar Menu"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jBEditarMenuActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JButton" name="jBEditarCombos">
           <Properties>
@@ -224,6 +236,9 @@
         </Property>
         <Property name="text" type="java.lang.String" value="Ver Lista de Empleados"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jBVerListaEmpleadosActionPerformed"/>
+      </Events>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
           <AbsoluteConstraints x="90" y="240" width="-1" height="-1"/>
@@ -233,12 +248,12 @@
     <Component class="javax.swing.JLabel" name="jLImagen">
       <Properties>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="3" name="/Images/vinoConBlanco.jpg"/>
+          <Image iconType="3" name="/Resources/vinoConBlanco.jpg"/>
         </Property>
       </Properties>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-          <AbsoluteConstraints x="0" y="0" width="-1" height="-1"/>
+          <AbsoluteConstraints x="0" y="0" width="760" height="-1"/>
         </Constraint>
       </Constraints>
     </Component>

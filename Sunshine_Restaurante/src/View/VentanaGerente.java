@@ -5,6 +5,7 @@
  */
 package View;
 
+import Controller.Controlador;
 import javax.swing.JPanel;
 
 /**
@@ -55,7 +56,7 @@ public class VentanaGerente extends javax.swing.JFrame {
         jLTitulo.setFont(new java.awt.Font("Tahoma", 1, 36)); // NOI18N
         jLTitulo.setForeground(new java.awt.Color(241, 234, 226));
         jLTitulo.setText("Opciones de Gerencia ");
-        getContentPane().add(jLTitulo, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 80, 440, 60));
+        getContentPane().add(jLTitulo, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 60, 440, 60));
 
         jBInicio.setBackground(new java.awt.Color(241, 234, 226));
         jBInicio.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
@@ -66,6 +67,11 @@ public class VentanaGerente extends javax.swing.JFrame {
         jBReportePorSucursal.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jBReportePorSucursal.setForeground(new java.awt.Color(89, 17, 18));
         jBReportePorSucursal.setText("Reporte de Sucursal");
+        jBReportePorSucursal.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jBReportePorSucursalActionPerformed(evt);
+            }
+        });
         getContentPane().add(jBReportePorSucursal, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 180, 190, -1));
 
         jPGerenteGeneral.setBackground(new java.awt.Color(89, 17, 18));
@@ -85,16 +91,31 @@ public class VentanaGerente extends javax.swing.JFrame {
         jBVerReporteGeneral.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jBVerReporteGeneral.setForeground(new java.awt.Color(89, 17, 18));
         jBVerReporteGeneral.setText("Ver Reporte General");
+        jBVerReporteGeneral.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jBVerReporteGeneralActionPerformed(evt);
+            }
+        });
 
         jBAgregarProducto.setBackground(new java.awt.Color(241, 234, 226));
         jBAgregarProducto.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jBAgregarProducto.setForeground(new java.awt.Color(89, 17, 18));
         jBAgregarProducto.setText("Agregar Producto");
+        jBAgregarProducto.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jBAgregarProductoActionPerformed(evt);
+            }
+        });
 
         jBEditarMenu.setBackground(new java.awt.Color(241, 234, 226));
         jBEditarMenu.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jBEditarMenu.setForeground(new java.awt.Color(89, 17, 18));
         jBEditarMenu.setText("Editar Menu");
+        jBEditarMenu.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jBEditarMenuActionPerformed(evt);
+            }
+        });
 
         jBEditarCombos.setBackground(new java.awt.Color(241, 234, 226));
         jBEditarCombos.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
@@ -142,21 +163,60 @@ public class VentanaGerente extends javax.swing.JFrame {
         jBVerListaEmpleados.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jBVerListaEmpleados.setForeground(new java.awt.Color(89, 17, 18));
         jBVerListaEmpleados.setText("Ver Lista de Empleados");
+        jBVerListaEmpleados.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jBVerListaEmpleadosActionPerformed(evt);
+            }
+        });
         getContentPane().add(jBVerListaEmpleados, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 240, -1, -1));
 
-        jLImagen.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/vinoConBlanco.jpg"))); // NOI18N
-        getContentPane().add(jLImagen, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
+        jLImagen.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resources/vinoConBlanco.jpg"))); // NOI18N
+        getContentPane().add(jLImagen, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 760, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void jBEditarCombosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBEditarCombosActionPerformed
         // TODO add your handling code here:
+        Controlador.getCtr().getCrearCombos();
+        this.dispose();
     }//GEN-LAST:event_jBEditarCombosActionPerformed
 
     private void jBVerReporteMensualActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBVerReporteMensualActionPerformed
         // TODO add your handling code here:
+        Controlador.getCtr().getReportes().setVisible(true);
+        Controlador.getCtr().getReportes().getjPSeleccionSucursal().setVisible(false);
+        this.dispose();
     }//GEN-LAST:event_jBVerReporteMensualActionPerformed
+
+    private void jBReportePorSucursalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBReportePorSucursalActionPerformed
+        // TODO add your handling code here:
+        Controlador.getCtr().getReportes().setVisible(true);
+        Controlador.getCtr().getReportes().getjPSeleccionSucursal().setVisible(false);
+        this.dispose();
+    }//GEN-LAST:event_jBReportePorSucursalActionPerformed
+
+    private void jBVerListaEmpleadosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBVerListaEmpleadosActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jBVerListaEmpleadosActionPerformed
+
+    private void jBVerReporteGeneralActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBVerReporteGeneralActionPerformed
+        // TODO add your handling code here:
+        Controlador.getCtr().getReportes().setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_jBVerReporteGeneralActionPerformed
+
+    private void jBAgregarProductoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBAgregarProductoActionPerformed
+        // TODO add your handling code here:
+        Controlador.getCtr().getAgregarProducto();
+        this.dispose();
+    }//GEN-LAST:event_jBAgregarProductoActionPerformed
+
+    private void jBEditarMenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBEditarMenuActionPerformed
+        // TODO add your handling code here:
+        Controlador.getCtr().getEditarMEnu();
+        this.dispose();
+    }//GEN-LAST:event_jBEditarMenuActionPerformed
 
     /**
      * @param args the command line arguments
