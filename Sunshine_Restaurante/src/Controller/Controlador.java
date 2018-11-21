@@ -5,10 +5,14 @@
  */
 package Controller;
 
+import View.AgregarProducto;
+import View.CrearCombo;
+import View.EditarMenu;
 import View.IniciarSesion;
 import View.Principal;
 import View.RealizarCompra;
 import View.Registrarse;
+import View.Reportes;
 import View.VerMenu;
 
 /**
@@ -22,6 +26,26 @@ public class Controlador {
     private IniciarSesion iniciarSesion = new IniciarSesion();
     private RealizarCompra realizarCompra = new RealizarCompra();
     private Registrarse registrarse = new Registrarse();
+    private AgregarProducto agregarProducto = new AgregarProducto();
+    private CrearCombo crearCombos = new CrearCombo();
+    private EditarMenu editarMEnu = new EditarMenu();
+
+    public AgregarProducto getAgregarProducto() {
+        return agregarProducto;
+    }
+
+    public CrearCombo getCrearCombos() {
+        return crearCombos;
+    }
+
+    public EditarMenu getEditarMEnu() {
+        return editarMEnu;
+    }
+
+    public Reportes getReportes() {
+        return reportes;
+    }
+    private Reportes reportes = new Reportes();
 
     public IniciarSesion getIniciarSesion() {
         return iniciarSesion;
