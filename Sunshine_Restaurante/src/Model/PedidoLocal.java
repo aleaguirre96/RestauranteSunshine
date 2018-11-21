@@ -9,8 +9,13 @@ package Model;
  *
  * @author Roberto
  */
-public class Menu {
+public class PedidoLocal extends Pedido {
     
-    
+    public PedidoLocal() {
+    }
+
+    public PedidoLocal(int ID, Sucursal sucursal, String t_pago, double total, String fecha) {
+        super(ID, sucursal, t_pago, total, fecha);
+    }    
     
 }

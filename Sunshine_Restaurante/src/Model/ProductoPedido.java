@@ -11,30 +11,30 @@ package Model;
  */
 public class ProductoPedido {
     
-    private int ID_Pedido;
-    private int ID_Producto;
+    private Pedido pedido;
+    private Producto producto;
     private int cantidad;
 
-    public ProductoPedido(int ID_Pedido, int ID_Producto, int cantidad) {
-        this.ID_Pedido = ID_Pedido;
-        this.ID_Producto = ID_Producto;
+    public ProductoPedido(Pedido pedido, Producto producto, int cantidad) {
+        this.pedido = pedido;
+        this.producto = producto;
         this.cantidad = cantidad;
     }
 
-    public int getID_Pedido() {
-        return ID_Pedido;
+    public Pedido getPedido() {
+        return pedido;
     }
 
-    public void setID_Pedido(int ID_Pedido) {
-        this.ID_Pedido = ID_Pedido;
+    public void setPedido(Pedido pedido) {
+        this.pedido = pedido;
     }
 
-    public int getID_Producto() {
-        return ID_Producto;
+    public Producto getProducto() {
+        return producto;
     }
 
-    public void setID_Producto(int ID_Producto) {
-        this.ID_Producto = ID_Producto;
+    public void setProducto(Producto producto) {
+        this.producto = producto;
     }
 
     public int getCantidad() {
@@ -44,7 +44,7 @@ public class ProductoPedido {
     public void setCantidad(int cantidad) {
         this.cantidad = cantidad;
     }
-    
-    
+
+      
     
 }

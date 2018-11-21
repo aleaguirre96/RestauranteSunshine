@@ -11,30 +11,30 @@ package Model;
  */
 public class ComboPedido {
     
-    private int ID_Combo;
-    private int ID_Pedido;
+    private Combo combo;
+    private Pedido pedido;
     private int cantidad;
 
-    public ComboPedido(int ID_Combo, int ID_Pedido, int cantidad) {
-        this.ID_Combo = ID_Combo;
-        this.ID_Pedido = ID_Pedido;
+    public ComboPedido(Combo combo, Pedido pedido, int cantidad) {
+        this.combo = combo;
+        this.pedido = pedido;
         this.cantidad = cantidad;
     }
 
-    public int getID_Combo() {
-        return ID_Combo;
+    public Combo getCombo() {
+        return combo;
     }
 
-    public void setID_Combo(int ID_Combo) {
-        this.ID_Combo = ID_Combo;
+    public void setCombo(Combo combo) {
+        this.combo = combo;
     }
 
-    public int getID_Pedido() {
-        return ID_Pedido;
+    public Pedido getPedido() {
+        return pedido;
     }
 
-    public void setID_Pedido(int ID_Pedido) {
-        this.ID_Pedido = ID_Pedido;
+    public void setPedido(Pedido pedido) {
+        this.pedido = pedido;
     }
 
     public int getCantidad() {
@@ -43,6 +43,8 @@ public class ComboPedido {
 
     public void setCantidad(int cantidad) {
         this.cantidad = cantidad;
-    }       
+    }
+
+    
     
 }
