@@ -8,6 +8,7 @@ package Controller;
 import Model.User;
 import Model.UserClient;
 import Model.UserEmpl;
+import java.math.BigDecimal;
 import java.sql.CallableStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -53,6 +54,26 @@ public class DAO_Users extends DAO_Connector{
             connection.close();
         }catch(SQLException e){
             mensaje = "Add_User: No se pudo agregar al usuario";
+        }
+        return mensaje;
+    }
+    
+    public String addNewUserEmpl(UserEmpl newUserE){
+        String mensaje = "";
+        try{
+            this.conectar();
+            CallableStatement statemen = connection.prepareCall("{CALL ADDNEWUSEREMPL(?,?,?,?)}");
+            statemen.setString(1, newUserE.getName());
+            statemen.setString(2, newUserE.getPass());
+            statemen.setInt(3, newUserE.getTipo());
+            statemen.setBigDecimal(4,new BigDecimal(newUserE.getSalario()));
+            
+            statemen.execute();
+            statemen.close();
+            mensaje = "Add_UserEmp: Usuario Agregado.";
+            connection.close();
+        }catch(SQLException e){
+            mensaje = "Add_UserEmp: No se pudo agregar al usuario empleado.";
         }
         return mensaje;
     }

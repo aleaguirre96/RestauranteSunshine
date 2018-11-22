@@ -12,11 +12,48 @@ package Model;
  */
 public class UserEmpl extends User {
     private int tipo;
+    private double salario;
+    
     public UserEmpl(String name,String pass,int tipo) {
+        super(name, pass);
+        this.tipo = tipo;
+        this.salario = 0;
+    }
+    
+    public UserEmpl(String name,String pass,int tipo, double salario) {
         super(name, pass);
         this.tipo = tipo;
     }
 
+    public double getSalario() {
+        return salario;
+    }
+
+    public void setSalario(double salario) {
+        this.salario = salario;
+    }
+
+    
+    @Override
+    public void setPass(String pass) {
+        super.setPass(pass); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public String getPass() {
+        return super.getPass(); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public void setName(String name) {
+        super.setName(name); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public String getName() {
+        return super.getName(); //To change body of generated methods, choose Tools | Templates.
+    }
+    
     public int getTipo() {
         return tipo;
     }

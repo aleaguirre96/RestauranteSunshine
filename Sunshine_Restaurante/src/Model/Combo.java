@@ -33,6 +33,10 @@ public class Combo {
         Object[] nuevoP = {newProducto, cant};
         this.productosCombo.add(nuevoP);
     }
+    
+    public int getCantidadProductoPos(int posProducto){
+        return (int)this.productosCombo.get(posProducto)[1];
+    }
 
     public int getID() {
         return ID;
