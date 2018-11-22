@@ -5,6 +5,8 @@
  */
 package Model;
 
+import Model.Factory.Pedido;
+
 /**
  *
  * @author Roberto
