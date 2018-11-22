@@ -53,7 +53,6 @@ public class Controlador {
         DAO_Users useConec = new DAO_Users();
         try { 
             this.userApp = useConec.cargarUsers();
-            System.out.println(this.userApp.size());
         } catch (SQLException ex) {
             Logger.getLogger(Controlador.class.getName()).log(Level.SEVERE, null, ex);
         }

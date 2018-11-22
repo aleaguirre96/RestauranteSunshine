@@ -144,7 +144,7 @@ public class AgregarProducto extends javax.swing.JFrame {
             public void run() {
                 new AgregarProducto().setVisible(true);
             }
-        });
+        }); 
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

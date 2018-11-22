@@ -10,7 +10,7 @@ import java.awt.Image;
 import java.awt.Toolkit;
 
 /**
- *
+ * 
  * @author danip
  */
 public class VerMenu extends javax.swing.JFrame {

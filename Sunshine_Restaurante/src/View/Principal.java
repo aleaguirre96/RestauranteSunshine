@@ -135,7 +135,7 @@ public class Principal extends javax.swing.JFrame {
         // TODO add your handling code here:
         Registrarse r = Controlador.getCtr().getRegistrarse();
         r.setVisible(true);
-        this.dispose();
+        this.dispose(); 
     }//GEN-LAST:event_jBRegistrarseActionPerformed
 
     private void jBIniciarSesionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBIniciarSesionActionPerformed

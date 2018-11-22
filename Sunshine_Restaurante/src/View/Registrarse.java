@@ -9,7 +9,7 @@ import Controller.Controlador;
 import java.awt.Image;
 import java.awt.Toolkit;
 
-/**
+/** 
  *
  * @author danip
  */

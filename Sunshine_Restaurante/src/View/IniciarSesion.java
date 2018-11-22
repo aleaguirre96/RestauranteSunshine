@@ -163,7 +163,7 @@ public class IniciarSesion extends javax.swing.JFrame {
     private void jLConfirmarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jLConfirmarActionPerformed
         // TODO add your handling code here:
         Controlador.getCtr().setUsers();
-        //getUser();
+        //getUser(); 
     }//GEN-LAST:event_jLConfirmarActionPerformed
 
     private void getUser(){

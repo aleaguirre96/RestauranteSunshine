@@ -9,7 +9,7 @@ import Controller.Controlador;
 import javax.swing.JPanel;
 
 /**
- *
+ * 
  * @author danip
  */
 public class VentanaGerente extends javax.swing.JFrame {

@@ -10,7 +10,7 @@ import Controller.Controlador;
 import javax.swing.JPanel;
 
 /**
- *
+ * 
  * @author danip
  */
 public class Reportes extends javax.swing.JFrame {
