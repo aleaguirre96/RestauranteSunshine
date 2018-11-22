@@ -162,12 +162,13 @@ public class IniciarSesion extends javax.swing.JFrame {
 
     private void jLConfirmarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jLConfirmarActionPerformed
         // TODO add your handling code here:
-        getUser();
+        Controlador.getCtr().setUsers();
+        //getUser();
     }//GEN-LAST:event_jLConfirmarActionPerformed
 
     private void getUser(){
         if(validarCampos()){
-            User tmp = Controlador.getCtr().Login(this.jTNombre.getText(),this.jTContrasena.getText());
+            User tmp = null;//Controlador.getCtr().Login(this.jTNombre.getText(),this.jTContrasena.getText());
             if(tmp == null){
                 JOptionPane.showMessageDialog(null, "No hay usuarios con esos datos");
             }else if(tmp instanceof UserClient){

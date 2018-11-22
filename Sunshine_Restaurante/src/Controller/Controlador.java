@@ -16,6 +16,10 @@ import View.Registrarse;
 import View.Reportes;
 import View.VentanaGerente;
 import View.VerMenu;
+import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
@@ -33,17 +37,26 @@ public class Controlador {
     private EditarMenu editarMEnu = new EditarMenu();
     private VerMenu verMenu = new VerMenu();
     private VentanaGerente ventGerente = new VentanaGerente();
+    private ArrayList<User> userApp = new ArrayList<User>();
 
-    private Connector ConneccionBase;
     
-    public User Login(String name, String pass){
-        ConneccionBase = Connector.getInstance();
-        ConneccionBase.createConnection();
-        return ConneccionBase.Login(name, pass);
-    }
-    
+        
     public AgregarProducto getAgregarProducto() {
         return agregarProducto;
+    }
+    
+    public ArrayList<User> getUser(){
+        return userApp;
+    }
+    
+    public void setUsers(){
+        DAO_Users useConec = new DAO_Users();
+        try { 
+            this.userApp = useConec.cargarUsers();
+            System.out.println(this.userApp.size());
+        } catch (SQLException ex) {
+            Logger.getLogger(Controlador.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
 
 
