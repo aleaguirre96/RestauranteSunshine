@@ -5,14 +5,16 @@
  */
 package Controller;
 
+import Model.User;
 import View.AgregarProducto;
-import View.CrearCombo;
+//import View.CrearCombo;
 import View.EditarMenu;
 import View.IniciarSesion;
 import View.Principal;
 import View.RealizarCompra;
 import View.Registrarse;
 import View.Reportes;
+import View.VentanaGerente;
 import View.VerMenu;
 
 /**
@@ -27,13 +29,34 @@ public class Controlador {
     private RealizarCompra realizarCompra = new RealizarCompra();
     private Registrarse registrarse = new Registrarse();
     private AgregarProducto agregarProducto = new AgregarProducto();
+<<<<<<< HEAD
+=======
+    //private CrearCombo crearCombos = new CrearCombo();
+>>>>>>> 05c06716a3526b4e0e00dd8d233cc3e5a8b60c6f
     private EditarMenu editarMEnu = new EditarMenu();
+    private VerMenu verMenu = new VerMenu();
+    private VentanaGerente ventGerente = new VentanaGerente();
 
+    private Connector ConneccionBase;
+    
+    public User Login(String name, String pass){
+        ConneccionBase = Connector.getInstance();
+        ConneccionBase.createConnection();
+        return ConneccionBase.Login(name, pass);
+    }
+    
     public AgregarProducto getAgregarProducto() {
         return agregarProducto;
     }
 
+<<<<<<< HEAD
    
+=======
+   // public CrearCombo getCrearCombos() {
+   //     return crearCombos;
+   // }
+
+>>>>>>> 05c06716a3526b4e0e00dd8d233cc3e5a8b60c6f
     public EditarMenu getEditarMEnu() {
         return editarMEnu;
     }
@@ -69,7 +92,11 @@ public class Controlador {
     public VerMenu getVerMenu() {
         return verMenu;
     }
-    VerMenu verMenu = new VerMenu();
+    
+    public VentanaGerente getVentanaGerente(){
+        return this.ventGerente;
+    }
+    
     
    
     
