@@ -27,17 +27,13 @@ public class Controlador {
     private RealizarCompra realizarCompra = new RealizarCompra();
     private Registrarse registrarse = new Registrarse();
     private AgregarProducto agregarProducto = new AgregarProducto();
-    private CrearCombo crearCombos = new CrearCombo();
     private EditarMenu editarMEnu = new EditarMenu();
 
     public AgregarProducto getAgregarProducto() {
         return agregarProducto;
     }
 
-    public CrearCombo getCrearCombos() {
-        return crearCombos;
-    }
-
+   
     public EditarMenu getEditarMEnu() {
         return editarMEnu;
     }
