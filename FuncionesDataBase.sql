@@ -13,6 +13,8 @@ SET
 END //
 DELIMITER ;
 
+
+
 DELIMITER //
 #Agregar Usuarios
 CREATE PROCEDURE ADDNEWUSERCLIENT(IN IN_USERNAME VARCHAR(20), 
@@ -29,13 +31,16 @@ BEGIN
 		INSERT INTO UsersClient(USERNAME,USERPASSWORD)
 		VALUES(IN_USERNAME, IN_USERPASSWORD);
 	ELSE 
-       call `raise`(0001, 'Usuario ya existene');
+       call `raise`(0001, 'Usuario ya existente');
     END IF;
 END //
 DELIMITER ;
 
 
 call ADDNEWUSERCLIENT("jose","1234");
+call ADDNEWUSERCLIENT("dani","1234");
+call ADDNEWUSERCLIENT("roberto","1234");
+call ADDNEWUSERCLIENT("gabriel","1234");
 
 
 CREATE PROCEDURE ADDNEWUSEREMPL(IN IN_USERNAME VARCHAR(20), 
@@ -82,6 +87,77 @@ BEGIN
     FROM UsersClient;
 END //
 DELIMITER ;
+
+DELIMITER //
+CREATE PROCEDURE GETPRODUCTOS()
+BEGIN
+	SELECT *
+    FROM Producto;
+END //
+DELIMITER ;
+
+DELIMITER //
+#Agregar PRODUCTO
+CREATE PROCEDURE ADDNEWPRODUCTO(IN IN_NOMBRE VARCHAR(30), 
+                            IN IN_ACTIVO BOOLEAN,
+                            IN IN_PRECIO DECIMAL(10,2),
+                            IN IN_DESCRIPCION VARCHAR(50))
+BEGIN
+	INSERT INTO Producto(NOMBRE,ACTIVO, PRECIO, DESCRIPCION)
+	VALUES(IN_NOMBRE, IN_ACTIVO, IN_PRECIO, IN_DESCRIPCION);
+END //
+DELIMITER ;
+
+DELIMITER //
+#Agregar PRODUCTO
+CREATE PROCEDURE SETDISPPRODUCTO(IN IN_NOMBRE VARCHAR(30), 
+                            IN IN_ACTIVO BOOLEAN)
+BEGIN
+	UPDATE Producto
+    SET ACTIVO = IN_ACTIVO
+    WHERE NOMBRE = IN_NOMBRE;
+END //
+DELIMITER ;
+
+
+
+call addnewproducto("Coca-Cola",false,700,"Refrescante bebida carbonatada.");
+call setdispproducto("Coca-Cola", true);
+
+DELIMITER //
+CREATE PROCEDURE GETCOMBOS()
+BEGIN
+	SELECT *
+    FROM Combo;
+END //
+DELIMITER ;
+
+DELIMITER //
+#Agregar PRODUCTO
+CREATE PROCEDURE ADDNEWCOMBO(IN IN_NOMBRE VARCHAR(30), 
+                            IN IN_ACTIVO BOOLEAN,
+                            IN IN_PRECIO DECIMAL(10,2),
+                            IN IN_DESCRIPCION VARCHAR(50))
+BEGIN
+	INSERT INTO Combo(NOMBRE,ACTIVO, PRECIO, DESCRIPCION)
+	VALUES(IN_NOMBRE, IN_ACTIVO, IN_PRECIO, IN_DESCRIPCION);
+END //
+DELIMITER ;
+
+DELIMITER //
+#Agregar PRODUCTO
+CREATE PROCEDURE SETDISCOMBO(IN IN_NOMBRE VARCHAR(30), 
+                            IN IN_ACTIVO BOOLEAN)
+BEGIN
+	UPDATE Combo
+    SET ACTIVO = IN_ACTIVO
+    WHERE NOMBRE = IN_NOMBRE;
+END //
+DELIMITER ;
+call addnewcombo("Pobre",false,3500,"Combo para universitarios.");
+call getcombos();
+call setdiscombo("Pobre",true);
+
 
 
 

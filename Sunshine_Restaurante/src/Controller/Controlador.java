@@ -5,6 +5,8 @@
  */
 package Controller;
 
+import Model.Combo;
+import Model.Producto;
 import Model.User;
 import View.AgregarProducto;
 //import View.CrearCombo;
@@ -38,6 +40,8 @@ public class Controlador {
     private VerMenu verMenu = new VerMenu();
     private VentanaGerente ventGerente = new VentanaGerente();
     private ArrayList<User> userApp = new ArrayList<User>();
+    private ArrayList<Producto> listaProductos = new ArrayList<Producto>();
+    private ArrayList<Combo> listaCombos = new ArrayList<Combo>();
 
     
         
@@ -57,6 +61,15 @@ public class Controlador {
             Logger.getLogger(Controlador.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
+    
+    public void setProductos(){
+        DAO_PRODUCTOS proConec = new DAO_PRODUCTOS();
+        try { 
+            this.listaProductos = proConec.cargarProductos();
+        } catch (SQLException ex) {
+            Logger.getLogger(Controlador.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }   
 
 
     public EditarMenu getEditarMEnu() {

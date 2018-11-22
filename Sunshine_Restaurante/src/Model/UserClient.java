@@ -14,6 +14,28 @@ public class UserClient extends User{
 
     public UserClient(String name, String pass) {
         super(name,pass);
-    }    
+    }   
+
+    @Override
+    public void setPass(String pass) {
+        super.setPass(pass); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public String getPass() {
+        return super.getPass(); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public void setName(String name) {
+        super.setName(name); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public String getName() {
+        return super.getName(); //To change body of generated methods, choose Tools | Templates.
+    }
+    
+    
 }
 

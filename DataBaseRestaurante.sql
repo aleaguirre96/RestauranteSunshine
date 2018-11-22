@@ -60,7 +60,8 @@ CREATE TABLE IF NOT EXISTS SucursalEmpleados(
    ACTIVO BOOLEAN NOT NULL,
    PRECIO DECIMAL(10,2) NOT NULL,
    DESCRIPCION VARCHAR(50) NOT NULL,
-   CONSTRAINT idComboKey primary key (IDCOMBO)
+   CONSTRAINT idComboKey primary key (IDCOMBO),
+   CONSTRAINT nameCombokey unique (NOMBRE)
  );
  
  CREATE TABLE IF NOT EXISTS Producto(
@@ -69,7 +70,8 @@ CREATE TABLE IF NOT EXISTS SucursalEmpleados(
    ACTIVO BOOLEAN NOT NULL,
    PRECIO DECIMAL(10,2) NOT NULL,
    DESCRIPCION VARCHAR(50) NOT NULL,
-   CONSTRAINT idProductoKey primary key (IDPRODUCTO)
+   CONSTRAINT idProductoKey primary key (IDPRODUCTO),
+   CONSTRAINT nameProduckey unique (NOMBRE)
  );
  
  

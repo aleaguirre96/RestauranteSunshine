@@ -8,22 +8,24 @@
             <file>file:/C:/Users/jose/Documents/TEC/II%202018/Disenno/Proyecto%20I/RestauranteSunshine/Sunshine_Restaurante/src/Controller/DAO_Users.java</file>
             <file>file:/C:/Users/jose/Documents/TEC/II%202018/Disenno/Proyecto%20I/RestauranteSunshine/Sunshine_Restaurante/src/View/IniciarSesion.java</file>
             <file>file:/C:/Users/jose/Documents/TEC/II%202018/Disenno/Proyecto%20I/RestauranteSunshine/Sunshine_Restaurante/src/Model/Combo.java</file>
-            <file>file:/C:/Users/jose/Documents/TEC/II%202018/Disenno/Proyecto%20I/RestauranteSunshine/Sunshine_Restaurante/src/Model/UserEmpl.java</file>
-            <file>file:/C:/Users/jose/Documents/TEC/II%202018/Disenno/Proyecto%20I/RestauranteSunshine/Sunshine_Restaurante/src/View/RealizarCompra.java</file>
             <file>file:/C:/Users/jose/Documents/TEC/II%202018/Disenno/Proyecto%20I/RestauranteSunshine/Sunshine_Restaurante/src/Model/User.java</file>
             <file>file:/C:/Users/jose/Documents/TEC/II%202018/Disenno/Proyecto%20I/RestauranteSunshine/Sunshine_Restaurante/src/View/Principal.java</file>
-            <file>file:/C:/Users/jose/Documents/TEC/II%202018/Disenno/Proyecto%20I/RestauranteSunshine/Sunshine_Restaurante/src/Model/ComboProducto.java</file>
             <file>file:/C:/Users/jose/Documents/TEC/II%202018/Disenno/Proyecto%20I/RestauranteSunshine/Sunshine_Restaurante/src/Model/Menu.java</file>
+            <file>file:/C:/Users/jose/Documents/TEC/II%202018/Disenno/Proyecto%20I/RestauranteSunshine/Sunshine_Restaurante/src/Model/ComboPedido.java</file>
+            <file>file:/C:/Users/jose/Documents/TEC/II%202018/Disenno/Proyecto%20I/RestauranteSunshine/Sunshine_Restaurante/src/Controller/DAO_COMBOS.java</file>
+            <file>file:/C:/Users/jose/Documents/TEC/II%202018/Disenno/Proyecto%20I/RestauranteSunshine/Sunshine_Restaurante/src/View/EditarMenu.java</file>
+            <file>file:/C:/Users/jose/Documents/TEC/II%202018/Disenno/Proyecto%20I/RestauranteSunshine/Sunshine_Restaurante/src/View/Registrarse.java</file>
+            <file>file:/C:/Users/jose/Documents/TEC/II%202018/Disenno/Proyecto%20I/RestauranteSunshine/Sunshine_Restaurante/src/View/AgregarProducto.java</file>
+            <file>file:/C:/Users/jose/Documents/TEC/II%202018/Disenno/Proyecto%20I/RestauranteSunshine/Sunshine_Restaurante/src/Controller/DAO_PRODUCTOS.java</file>
+            <file>file:/C:/Users/jose/Documents/TEC/II%202018/Disenno/Proyecto%20I/RestauranteSunshine/Sunshine_Restaurante/src/Model/UserEmpl.java</file>
+            <file>file:/C:/Users/jose/Documents/TEC/II%202018/Disenno/Proyecto%20I/RestauranteSunshine/Sunshine_Restaurante/src/View/RealizarCompra.java</file>
+            <file>file:/C:/Users/jose/Documents/TEC/II%202018/Disenno/Proyecto%20I/RestauranteSunshine/Sunshine_Restaurante/src/Model/ComboProducto.java</file>
             <file>file:/C:/Users/jose/Documents/TEC/II%202018/Disenno/Proyecto%20I/RestauranteSunshine/Sunshine_Restaurante/src/Controller/DAO_Connector.java</file>
             <file>file:/C:/Users/jose/Documents/TEC/II%202018/Disenno/Proyecto%20I/RestauranteSunshine/Sunshine_Restaurante/src/Model/Producto.java</file>
             <file>file:/C:/Users/jose/Documents/TEC/II%202018/Disenno/Proyecto%20I/RestauranteSunshine/Sunshine_Restaurante/src/Controller/Controlador.java</file>
-            <file>file:/C:/Users/jose/Documents/TEC/II%202018/Disenno/Proyecto%20I/RestauranteSunshine/Sunshine_Restaurante/src/Model/ComboPedido.java</file>
             <file>file:/C:/Users/jose/Documents/TEC/II%202018/Disenno/Proyecto%20I/RestauranteSunshine/Sunshine_Restaurante/src/Model/UserClient.java</file>
             <file>file:/C:/Users/jose/Documents/TEC/II%202018/Disenno/Proyecto%20I/RestauranteSunshine/Sunshine_Restaurante/src/View/CrearCombo.java</file>
-            <file>file:/C:/Users/jose/Documents/TEC/II%202018/Disenno/Proyecto%20I/RestauranteSunshine/Sunshine_Restaurante/src/View/EditarMenu.java</file>
-            <file>file:/C:/Users/jose/Documents/TEC/II%202018/Disenno/Proyecto%20I/RestauranteSunshine/Sunshine_Restaurante/src/View/Registrarse.java</file>
             <file>file:/C:/Users/jose/Documents/TEC/II%202018/Disenno/Proyecto%20I/RestauranteSunshine/Sunshine_Restaurante/src/Model/ProductoPedido.java</file>
-            <file>file:/C:/Users/jose/Documents/TEC/II%202018/Disenno/Proyecto%20I/RestauranteSunshine/Sunshine_Restaurante/src/View/AgregarProducto.java</file>
             <file>file:/C:/Users/jose/Documents/TEC/II%202018/Disenno/Proyecto%20I/RestauranteSunshine/Sunshine_Restaurante/src/Model/Sucursal.java</file>
             <file>file:/C:/Users/jose/Documents/TEC/II%202018/Disenno/Proyecto%20I/RestauranteSunshine/Sunshine_Restaurante/src/View/Reportes.java</file>
         </group>

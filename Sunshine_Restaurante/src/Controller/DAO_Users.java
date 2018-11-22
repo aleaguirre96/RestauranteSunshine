@@ -35,10 +35,26 @@ public class DAO_Users extends DAO_Connector{
         }
         connection.close();
         }catch(SQLException e){
-            System.out.print(e.getMessage());
             throw e;    
         }
         return listaUsuarios;
+    }
+    
+    public String addNewUserClient(UserClient newUserC){
+        String mensaje = "";
+        try{
+            this.conectar();
+            CallableStatement statemen = connection.prepareCall("{CALL ADDNEWUSERCLIENT(?,?)}");
+            statemen.setString(1, newUserC.getName());
+            statemen.setString(2, newUserC.getPass());
+            statemen.execute();
+            statemen.close();
+            mensaje = "Add_User: Usuario Agregado.";
+            connection.close();
+        }catch(SQLException e){
+            mensaje = "Add_User: No se pudo agregar al usuario";
+        }
+        return mensaje;
     }
 }
 
