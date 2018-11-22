@@ -6,8 +6,12 @@
 package View;
 
 import Controller.Controlador;
+import Model.User;
+import Model.UserClient;
+import Model.UserEmpl;
 import java.awt.Image;
 import java.awt.Toolkit;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -46,7 +50,7 @@ public class IniciarSesion extends javax.swing.JFrame {
         jLNombre = new javax.swing.JLabel();
         jLContrasena = new javax.swing.JLabel();
         jTNombre = new javax.swing.JTextField();
-        jtContrasena = new javax.swing.JTextField();
+        jTContrasena = new javax.swing.JTextField();
         lblDataSesion = new javax.swing.JLabel();
         lblDataSesion1 = new javax.swing.JLabel();
         jLImagen = new javax.swing.JLabel();
@@ -120,14 +124,14 @@ public class IniciarSesion extends javax.swing.JFrame {
         jTNombre.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         getContentPane().add(jTNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 210, 230, -1));
 
-        jtContrasena.setBackground(new java.awt.Color(241, 234, 226));
-        jtContrasena.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        jtContrasena.addActionListener(new java.awt.event.ActionListener() {
+        jTContrasena.setBackground(new java.awt.Color(241, 234, 226));
+        jTContrasena.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jTContrasena.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jtContrasenaActionPerformed(evt);
+                jTContrasenaActionPerformed(evt);
             }
         });
-        getContentPane().add(jtContrasena, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 260, 230, -1));
+        getContentPane().add(jTContrasena, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 260, 230, -1));
 
         lblDataSesion.setBackground(new java.awt.Color(167, 39, 32));
         lblDataSesion.setOpaque(true);
@@ -144,10 +148,10 @@ public class IniciarSesion extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jtContrasenaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jtContrasenaActionPerformed
+    private void jTContrasenaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTContrasenaActionPerformed
         // TODO add your handling code here:
         
-    }//GEN-LAST:event_jtContrasenaActionPerformed
+    }//GEN-LAST:event_jTContrasenaActionPerformed
 
     private void jBInicioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBInicioActionPerformed
         // TODO add your handling code here:
@@ -158,11 +162,39 @@ public class IniciarSesion extends javax.swing.JFrame {
 
     private void jLConfirmarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jLConfirmarActionPerformed
         // TODO add your handling code here:
-        RealizarCompra realizar = Controlador.getCtr().getRealizarCompra();
-        realizar.setVisible(true);
-        this.dispose();
+        getUser();
     }//GEN-LAST:event_jLConfirmarActionPerformed
 
+    private void getUser(){
+        if(validarCampos()){
+            User tmp = Controlador.getCtr().Login(this.jTNombre.getText(),this.jTContrasena.getText());
+            if(tmp == null){
+                JOptionPane.showMessageDialog(null, "No hay usuarios con esos datos");
+            }else if(tmp instanceof UserClient){
+                RealizarCompra realizar = Controlador.getCtr().getRealizarCompra();
+                realizar.setVisible(true);
+                this.dispose();
+            }else if(tmp instanceof UserEmpl){
+                ventanaEmpleado(((UserEmpl) tmp).getTipo());
+            }
+        }else{
+          JOptionPane.showMessageDialog(null, "Llene los datos correspondientes");
+        }
+
+    }
+    
+    private boolean validarCampos(){
+        boolean result = true;
+        if(this.jTNombre.getText().isEmpty() || this.jTContrasena.getText().isEmpty())
+            result = false;
+        return result;
+    }
+    
+    private void ventanaEmpleado(int tipo){
+        VentanaGerente nuevaVentana = Controlador.getCtr().getVentanaGerente();
+        nuevaVentana.setVisible(true);
+        this.dispose();
+    }
     /**
      * @param args the command line arguments
      */
@@ -210,8 +242,8 @@ public class IniciarSesion extends javax.swing.JFrame {
     private javax.swing.JLabel jLImagen;
     private javax.swing.JLabel jLNombre;
     private javax.swing.JLabel jLTitulo;
+    private javax.swing.JTextField jTContrasena;
     private javax.swing.JTextField jTNombre;
-    private javax.swing.JTextField jtContrasena;
     private javax.swing.JLabel lblDataSesion;
     private javax.swing.JLabel lblDataSesion1;
     private javax.swing.JLabel lblUp;

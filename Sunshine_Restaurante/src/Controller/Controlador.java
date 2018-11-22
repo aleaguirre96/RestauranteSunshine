@@ -5,14 +5,16 @@
  */
 package Controller;
 
+import Model.User;
 import View.AgregarProducto;
-import View.CrearCombo;
+//import View.CrearCombo;
 import View.EditarMenu;
 import View.IniciarSesion;
 import View.Principal;
 import View.RealizarCompra;
 import View.Registrarse;
 import View.Reportes;
+import View.VentanaGerente;
 import View.VerMenu;
 
 /**
@@ -27,16 +29,26 @@ public class Controlador {
     private RealizarCompra realizarCompra = new RealizarCompra();
     private Registrarse registrarse = new Registrarse();
     private AgregarProducto agregarProducto = new AgregarProducto();
-    private CrearCombo crearCombos = new CrearCombo();
+    //private CrearCombo crearCombos = new CrearCombo();
     private EditarMenu editarMEnu = new EditarMenu();
+    private VerMenu verMenu = new VerMenu();
+    private VentanaGerente ventGerente = new VentanaGerente();
 
+    private Connector ConneccionBase;
+    
+    public User Login(String name, String pass){
+        ConneccionBase = Connector.getInstance();
+        ConneccionBase.createConnection();
+        return ConneccionBase.Login(name, pass);
+    }
+    
     public AgregarProducto getAgregarProducto() {
         return agregarProducto;
     }
 
-    public CrearCombo getCrearCombos() {
-        return crearCombos;
-    }
+   // public CrearCombo getCrearCombos() {
+   //     return crearCombos;
+   // }
 
     public EditarMenu getEditarMEnu() {
         return editarMEnu;
@@ -73,7 +85,11 @@ public class Controlador {
     public VerMenu getVerMenu() {
         return verMenu;
     }
-    VerMenu verMenu = new VerMenu();
+    
+    public VentanaGerente getVentanaGerente(){
+        return this.ventGerente;
+    }
+    
     
    
     
