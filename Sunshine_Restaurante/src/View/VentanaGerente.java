@@ -178,12 +178,7 @@ public class VentanaGerente extends javax.swing.JFrame {
 
     private void jBEditarCombosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBEditarCombosActionPerformed
         // TODO add your handling code here:
-<<<<<<< HEAD
-        
-=======
-       // Controlador.getCtr().getCrearCombos();
-       // this.dispose();
->>>>>>> 05c06716a3526b4e0e00dd8d233cc3e5a8b60c6f
+
     }//GEN-LAST:event_jBEditarCombosActionPerformed
 
     private void jBVerReporteMensualActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBVerReporteMensualActionPerformed

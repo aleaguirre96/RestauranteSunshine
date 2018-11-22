@@ -29,10 +29,7 @@ public class Controlador {
     private RealizarCompra realizarCompra = new RealizarCompra();
     private Registrarse registrarse = new Registrarse();
     private AgregarProducto agregarProducto = new AgregarProducto();
-<<<<<<< HEAD
-=======
-    //private CrearCombo crearCombos = new CrearCombo();
->>>>>>> 05c06716a3526b4e0e00dd8d233cc3e5a8b60c6f
+
     private EditarMenu editarMEnu = new EditarMenu();
     private VerMenu verMenu = new VerMenu();
     private VentanaGerente ventGerente = new VentanaGerente();
@@ -49,14 +46,7 @@ public class Controlador {
         return agregarProducto;
     }
 
-<<<<<<< HEAD
-   
-=======
-   // public CrearCombo getCrearCombos() {
-   //     return crearCombos;
-   // }
 
->>>>>>> 05c06716a3526b4e0e00dd8d233cc3e5a8b60c6f
     public EditarMenu getEditarMEnu() {
         return editarMEnu;
     }
