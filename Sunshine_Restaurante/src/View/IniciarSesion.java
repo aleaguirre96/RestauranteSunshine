@@ -162,8 +162,7 @@ public class IniciarSesion extends javax.swing.JFrame {
 
     private void jLConfirmarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jLConfirmarActionPerformed
         // TODO add your handling code here:
-        Controlador.getCtr().setUsers();
-        Controlador.getCtr().setProductos();
+Controlador.getCtr().cargarDatosBase();
         //getUser(); 
     }//GEN-LAST:event_jLConfirmarActionPerformed
 

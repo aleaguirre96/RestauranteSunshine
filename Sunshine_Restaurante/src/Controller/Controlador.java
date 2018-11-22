@@ -8,6 +8,7 @@ package Controller;
 import Model.Combo;
 import Model.Producto;
 import Model.User;
+import Model.UserClient;
 import View.AgregarProducto;
 //import View.CrearCombo;
 import View.EditarMenu;
@@ -43,17 +44,30 @@ public class Controlador {
     private ArrayList<Producto> listaProductos = new ArrayList<Producto>();
     private ArrayList<Combo> listaCombos = new ArrayList<Combo>();
 
-    
+    public void cargarDatosBase(){
+        this.setUsersArray();
+        this.setProductosArray();
+        this.setCombosArray();
+        this.setProductosComboArray();
+    }
         
     public AgregarProducto getAgregarProducto() {
         return agregarProducto;
     }
-    
-    public ArrayList<User> getUser(){
+
+    public ArrayList<User> getUserApp() {
         return userApp;
     }
-    
-    public void setUsers(){
+
+    public ArrayList<Producto> getListaProductos() {
+        return listaProductos;
+    }
+
+    public ArrayList<Combo> getListaCombos() {
+        return listaCombos;
+    }
+
+    public void setUsersArray(){
         DAO_Users useConec = new DAO_Users();
         try { 
             this.userApp = useConec.cargarUsers();
@@ -62,14 +76,61 @@ public class Controlador {
         }
     }
     
-    public void setProductos(){
+    public String setNewUsersClient(UserClient nuevoUser){
+        DAO_Users useConec = new DAO_Users();
+        return useConec.addNewUserClient(nuevoUser);
+    }
+    
+    public String setNewProducto(Producto nuevoProducto){
+        DAO_PRODUCTOS proConec = new DAO_PRODUCTOS();
+        return proConec.addNewProducto(nuevoProducto);
+    }
+    
+    public String setNewCombo(Combo nuevoCombo){
+        DAO_COMBOS conConec = new DAO_COMBOS();
+        return conConec.addNewCombo(nuevoCombo);
+    }
+    
+    public String chageActProducto(Producto productoCambio){//Se le pasa el nombre del producto con el activo que queremos
+        DAO_PRODUCTOS proConec = new DAO_PRODUCTOS();
+        return proConec.setActivoProducto(productoCambio);
+    }
+    
+    public String chageActCombo(Combo comboCambio){//Se le pasa el nombre del combo con el activo que queremos
+        DAO_COMBOS conConec = new DAO_COMBOS();
+        return conConec.setActivoCombo(comboCambio);
+    }
+    
+    public String setNewProductoCombo(Combo comb, Producto newProducto, int cant){
+        DAO_COMBOS conConec = new DAO_COMBOS();
+        return conConec.addNewProducCombo(comb, newProducto, cant);
+    }
+    
+    public void setProductosArray(){
         DAO_PRODUCTOS proConec = new DAO_PRODUCTOS();
         try { 
             this.listaProductos = proConec.cargarProductos();
         } catch (SQLException ex) {
             Logger.getLogger(Controlador.class.getName()).log(Level.SEVERE, null, ex);
         }
-    }   
+    } 
+    
+    public void setCombosArray(){
+        DAO_COMBOS conConec = new DAO_COMBOS();
+        try { 
+            this.listaCombos = conConec.cargarCombos();
+        } catch (SQLException ex) {
+            Logger.getLogger(Controlador.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+    public void setProductosComboArray(){
+        DAO_COMBOS conConec = new DAO_COMBOS();
+        try {
+            this.listaCombos = conConec.getProductosCombos(listaCombos);
+        } catch (SQLException ex) {
+            Logger.getLogger(Controlador.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
 
 
     public EditarMenu getEditarMEnu() {

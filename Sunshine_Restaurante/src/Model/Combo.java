@@ -5,6 +5,8 @@
  */
 package Model;
 
+import java.util.ArrayList;
+
 /**
  *
  * @author Roberto
@@ -16,6 +18,7 @@ public class Combo {
     private String descripcion;
     private double precio;
     private boolean activo;
+    private ArrayList<Object[]> productosCombo;
 
     public Combo(int ID, String nombre, String descripcion, double precio, boolean activo) {
         this.ID = ID;
@@ -23,6 +26,12 @@ public class Combo {
         this.descripcion = descripcion;
         this.precio = precio;
         this.activo = activo;
+        this.productosCombo = new ArrayList<>();
+    }
+    
+    public void setProductoCombo(Producto newProducto, int cant){
+        Object[] nuevoP = {newProducto, cant};
+        this.productosCombo.add(nuevoP);
     }
 
     public int getID() {

@@ -7,6 +7,7 @@ package Controller;
 
 
 import Model.Combo;
+import Model.Producto;
 import java.math.BigDecimal;
 import java.sql.CallableStatement;
 import java.sql.ResultSet;
@@ -51,10 +52,28 @@ public class DAO_COMBOS extends DAO_Connector{
             statemen.setString(4, newCom.getDescripcion());
             statemen.execute();
             statemen.close();
-            mensaje = "Add_Prod: Combo Agregado.";
+            mensaje = "Add_Combo: Combo Agregado.";
             connection.close();
         }catch(SQLException e){
-            mensaje = "Add_Prod: No se pudo agregar el Combo";
+            mensaje = "Add_Combo: No se pudo agregar el Combo";
+        }
+        return mensaje;
+    }
+    
+    public String addNewProducCombo(Combo Com,Producto newPro, int cant){
+        String mensaje = "";
+        try{
+            this.conectar();
+            CallableStatement statemen = connection.prepareCall("{CALL SETCOMBOPRODUCTO(?,?,?)}");
+            statemen.setString(1, Com.getNombre()); 
+            statemen.setString(2, newPro.getNombre());
+            statemen.setInt(3, cant);
+            statemen.execute();
+            statemen.close();
+            mensaje = "Add_ProdCombo: Producto Agregado al combo.";
+            connection.close();
+        }catch(SQLException e){
+            mensaje = "Add_ProdCombo: No se pudo agregar el producto al Combo";
         }
         return mensaje;
     }
@@ -68,13 +87,37 @@ public class DAO_COMBOS extends DAO_Connector{
             statemen.setBoolean(2, upDatCombo.isActivo());
             statemen.executeUpdate();
             statemen.close();
-            mensaje = "Add_Prod: Atributo disponible editado.";
+            mensaje = "Act_Combo: Atributo disponible editado.";
             connection.close();
         }catch(SQLException e){
-            mensaje = "Add_Prod: No se pudo editar el atributo disponible.";
+            mensaje = "Act_Combo: No se pudo editar el atributo disponible.";
         }
         return mensaje;
-    }  
+    } 
+    
+    public ArrayList<Combo> getProductosCombos(ArrayList<Combo> combos)throws SQLException{
+        try{
+        this.conectar();
+            for (Combo combo : combos) {
+                CallableStatement st = connection.prepareCall("{CALL  GETCOMBOPRODUCTO(?)}");
+                st.setString(1, combo.getNombre());
+                ResultSet rs = st.executeQuery();
+                while (rs.next()){ //(int ID, String nombre, String descripcion, double precio, boolean activo)
+                    combo.setProductoCombo(new Producto(rs.getInt(1), //id
+                            rs.getString(2), //nombre
+                            rs.getString(5),
+                            rs.getBigDecimal(4).doubleValue(), //precio
+                            rs.getBoolean(3)) //activo
+                    ,rs.getInt(6));
+                }
+                connection.close(); 
+            }
+            
+        }catch(SQLException e){
+            throw e;    
+        }
+        return combos;
+    }
     
     
 }
