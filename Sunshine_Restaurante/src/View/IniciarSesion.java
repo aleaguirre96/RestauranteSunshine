@@ -7,8 +7,7 @@ package View;
 
 import Controller.Controlador;
 import Model.User;
-import Model.UserClient;
-//import Model.UserEmpl;
+
 import java.awt.Image;
 import java.awt.Toolkit;
 import javax.swing.JOptionPane;
@@ -170,11 +169,22 @@ public class IniciarSesion extends javax.swing.JFrame {
 
     private void getUser(){
         if(validarCampos()){
-
+          User tmp = Controlador.getCtr().validarUser(this.jTNombre.getText(), this.jTContrasena.getText());
+          if(tmp != null){
+              limpiarCampos();
+              ventanaUser(tmp.getTipo());
+          }else{
+          JOptionPane.showMessageDialog(null, "No hay usuarios con esos datos.");
+          }
         }else{
           JOptionPane.showMessageDialog(null, "Llene los datos correspondientes");
         }
 
+    }
+    
+    private void limpiarCampos(){
+         this.jTNombre.setText("");
+         this.jTContrasena.setText("");
     }
     
     private boolean validarCampos(){
@@ -184,10 +194,19 @@ public class IniciarSesion extends javax.swing.JFrame {
         return result;
     }
     
-    private void ventanaEmpleado(int tipo){
-        VentanaGerente nuevaVentana = Controlador.getCtr().getVentanaGerente();
-        nuevaVentana.setVisible(true);
-        this.dispose();
+    private void ventanaUser(int tipo){
+       switch (tipo){
+           case 0:
+               RealizarCompra nuevaVentCompra = Controlador.getCtr().getRealizarCompra();
+               nuevaVentCompra.setVisible(true);
+               this.dispose();
+               break;
+           case 1:
+               VentanaGerente nuevaVentana = Controlador.getCtr().getVentanaGerente();
+               nuevaVentana.setVisible(true);
+               this.dispose();
+               break;
+       }
     }
     /**
      * @param args the command line arguments

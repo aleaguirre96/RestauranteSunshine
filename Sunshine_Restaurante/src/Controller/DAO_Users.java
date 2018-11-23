@@ -30,7 +30,7 @@ public class DAO_Users extends DAO_Connector{
         while (rs.next()){
             int tipo = rs.getInt(3);
             if(tipo == 0){
-                listaUsuarios.add(new UserClient(rs.getString(1),rs.getString(2)));
+                listaUsuarios.add(new UserClient(rs.getString(1),rs.getString(2),tipo));
             }else if(tipo > 0){
                 listaUsuarios.add(new UserEmpl(rs.getString(1),rs.getString(2),tipo));
             }

@@ -6,6 +6,8 @@
 package View;
 
 import Controller.Controlador;
+import java.awt.Image;
+import java.awt.Toolkit;
 import javax.swing.JPanel;
 
 /**
@@ -19,7 +21,14 @@ public class VentanaGerente extends javax.swing.JFrame {
      */
     public VentanaGerente() {
         initComponents();
-        
+        setIconImage(getIconImage());
+        this.setLocationRelativeTo(null);
+    }
+    
+    @Override
+    public Image getIconImage(){
+        Image retValue = Toolkit.getDefaultToolkit().getImage(ClassLoader.getSystemResource("Resources/icons2.png"));
+        return retValue;
     }
 
     public JPanel getjPGerenteGeneral() {
@@ -45,6 +54,7 @@ public class VentanaGerente extends javax.swing.JFrame {
         jBEditarMenu = new javax.swing.JButton();
         jBEditarCombos = new javax.swing.JButton();
         jBVerListaEmpleados = new javax.swing.JButton();
+        lblUp = new javax.swing.JLabel();
         jLImagen = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -60,8 +70,13 @@ public class VentanaGerente extends javax.swing.JFrame {
 
         jBInicio.setBackground(new java.awt.Color(241, 234, 226));
         jBInicio.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jBInicio.setForeground(new java.awt.Color(89, 17, 18));
+        jBInicio.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resources/menuPrin.png"))); // NOI18N
         jBInicio.setText("Inicio");
-        getContentPane().add(jBInicio, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 10, 100, 40));
+        jBInicio.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        jBInicio.setHorizontalTextPosition(javax.swing.SwingConstants.LEFT);
+        jBInicio.setPreferredSize(new java.awt.Dimension(130, 40));
+        getContentPane().add(jBInicio, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 10, -1, -1));
 
         jBReportePorSucursal.setBackground(new java.awt.Color(241, 234, 226));
         jBReportePorSucursal.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
@@ -72,7 +87,7 @@ public class VentanaGerente extends javax.swing.JFrame {
                 jBReportePorSucursalActionPerformed(evt);
             }
         });
-        getContentPane().add(jBReportePorSucursal, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 180, 190, -1));
+        getContentPane().add(jBReportePorSucursal, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 180, 200, -1));
 
         jPGerenteGeneral.setBackground(new java.awt.Color(89, 17, 18));
         jPGerenteGeneral.setForeground(new java.awt.Color(89, 17, 18));
@@ -100,7 +115,7 @@ public class VentanaGerente extends javax.swing.JFrame {
         jBAgregarProducto.setBackground(new java.awt.Color(241, 234, 226));
         jBAgregarProducto.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jBAgregarProducto.setForeground(new java.awt.Color(89, 17, 18));
-        jBAgregarProducto.setText("Agregar Producto");
+        jBAgregarProducto.setText("Producto");
         jBAgregarProducto.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jBAgregarProductoActionPerformed(evt);
@@ -110,7 +125,7 @@ public class VentanaGerente extends javax.swing.JFrame {
         jBEditarMenu.setBackground(new java.awt.Color(241, 234, 226));
         jBEditarMenu.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jBEditarMenu.setForeground(new java.awt.Color(89, 17, 18));
-        jBEditarMenu.setText("Editar Menu");
+        jBEditarMenu.setText("Menu");
         jBEditarMenu.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jBEditarMenuActionPerformed(evt);
@@ -120,7 +135,7 @@ public class VentanaGerente extends javax.swing.JFrame {
         jBEditarCombos.setBackground(new java.awt.Color(241, 234, 226));
         jBEditarCombos.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jBEditarCombos.setForeground(new java.awt.Color(89, 17, 18));
-        jBEditarCombos.setText("Editar Combos");
+        jBEditarCombos.setText("Combos");
         jBEditarCombos.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jBEditarCombosActionPerformed(evt);
@@ -132,13 +147,13 @@ public class VentanaGerente extends javax.swing.JFrame {
         jPGerenteGeneralLayout.setHorizontalGroup(
             jPGerenteGeneralLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPGerenteGeneralLayout.createSequentialGroup()
-                .addContainerGap(74, Short.MAX_VALUE)
+                .addContainerGap(71, Short.MAX_VALUE)
                 .addGroup(jPGerenteGeneralLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jBVerReporteGeneral, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jBVerReporteMensual, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jBAgregarProducto, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jBEditarMenu, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jBEditarCombos, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jBEditarCombos, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(66, 66, 66))
         );
         jPGerenteGeneralLayout.setVerticalGroup(
@@ -162,16 +177,20 @@ public class VentanaGerente extends javax.swing.JFrame {
         jBVerListaEmpleados.setBackground(new java.awt.Color(241, 234, 226));
         jBVerListaEmpleados.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jBVerListaEmpleados.setForeground(new java.awt.Color(89, 17, 18));
-        jBVerListaEmpleados.setText("Ver Lista de Empleados");
+        jBVerListaEmpleados.setText("Manejo de Empleados");
         jBVerListaEmpleados.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jBVerListaEmpleadosActionPerformed(evt);
             }
         });
-        getContentPane().add(jBVerListaEmpleados, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 240, -1, -1));
+        getContentPane().add(jBVerListaEmpleados, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 240, 200, -1));
+
+        lblUp.setBackground(new java.awt.Color(255, 235, 238));
+        lblUp.setOpaque(true);
+        getContentPane().add(lblUp, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 760, 60));
 
         jLImagen.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resources/vinoConBlanco.jpg"))); // NOI18N
-        getContentPane().add(jLImagen, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 760, -1));
+        getContentPane().add(jLImagen, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 40, 760, 460));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -213,7 +232,7 @@ public class VentanaGerente extends javax.swing.JFrame {
 
     private void jBAgregarProductoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBAgregarProductoActionPerformed
         // TODO add your handling code here:
-        Controlador.getCtr().getAgregarProducto();
+        Controlador.getCtr().getAgregarProducto().setVisible(true);
         this.dispose();
     }//GEN-LAST:event_jBAgregarProductoActionPerformed
 
@@ -271,5 +290,6 @@ public class VentanaGerente extends javax.swing.JFrame {
     private javax.swing.JLabel jLImagen;
     private javax.swing.JLabel jLTitulo;
     private javax.swing.JPanel jPGerenteGeneral;
+    private javax.swing.JLabel lblUp;
     // End of variables declaration//GEN-END:variables
 }

@@ -6,6 +6,8 @@
 package View;
 
 import Controller.Controlador;
+import java.awt.Image;
+import java.awt.Toolkit;
 import javax.swing.JTable;
 
 /**
@@ -19,6 +21,14 @@ public class VerListaEmpleados extends javax.swing.JFrame {
      */
     public VerListaEmpleados() {
         initComponents();
+        setIconImage(getIconImage());
+        this.setLocationRelativeTo(null);
+    }
+    
+    @Override
+    public Image getIconImage(){
+        Image retValue = Toolkit.getDefaultToolkit().getImage(ClassLoader.getSystemResource("Resources/icons2.png"));
+        return retValue;
     }
 
     public JTable getjTListaDisponibles() {
@@ -63,7 +73,7 @@ public class VerListaEmpleados extends javax.swing.JFrame {
                 jBInicioActionPerformed(evt);
             }
         });
-        getContentPane().add(jBInicio, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 10, 140, 50));
+        getContentPane().add(jBInicio, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 10, -1, -1));
 
         jScrollPane1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 204, 204)));
 
@@ -78,7 +88,7 @@ public class VerListaEmpleados extends javax.swing.JFrame {
         ));
         jScrollPane1.setViewportView(jTListaDisponibles);
 
-        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 140, 260, 300));
+        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 160, 420, 300));
 
         jLTitulo.setBackground(new java.awt.Color(241, 234, 226));
         jLTitulo.setFont(new java.awt.Font("Tahoma", 1, 36)); // NOI18N
@@ -91,7 +101,7 @@ public class VerListaEmpleados extends javax.swing.JFrame {
         jLImagen.setMaximumSize(new java.awt.Dimension(130, 40));
         jLImagen.setMinimumSize(new java.awt.Dimension(130, 40));
         jLImagen.setPreferredSize(new java.awt.Dimension(130, 40));
-        getContentPane().add(jLImagen, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 760, 570));
+        getContentPane().add(jLImagen, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 70, 760, 440));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents

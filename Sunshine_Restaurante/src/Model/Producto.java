@@ -16,13 +16,15 @@ public class Producto {
     private String descripcion;
     private double precio;
     private boolean activo;
+    private int tiempo;
 
-    public Producto(int ID, String nombre, String descripcion, double precio, boolean activo) {
+    public Producto(int ID, String nombre, String descripcion, double precio, boolean activo, int tiempo) {
         this.ID = ID;
         this.nombre = nombre;
         this.descripcion = descripcion;
         this.precio = precio;
         this.activo = activo;
+        this.tiempo = tiempo;
     }
 
     public int getID() {
@@ -64,5 +66,15 @@ public class Producto {
     public void setActivo(boolean activo) {
         this.activo = activo;
     }
+
+    public int getTiempo() {
+        return tiempo;
+    }
+
+    public void setTiempo(int tiempo) {
+        this.tiempo = tiempo;
+    }
+    
+    
     
 }

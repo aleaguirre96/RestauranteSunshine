@@ -24,6 +24,7 @@ public class Principal extends javax.swing.JFrame {
         initComponents();
         setIconImage(getIconImage());
         this.setLocationRelativeTo(null);
+        
     }
     
     @Override
@@ -172,7 +173,7 @@ public class Principal extends javax.swing.JFrame {
         }
         //</editor-fold>
         //</editor-fold>
-
+        Controlador.getCtr().cargarDatosBase();
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {

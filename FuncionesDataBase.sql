@@ -58,7 +58,8 @@ BEGIN
 END //
 DELIMITER ;
 
-call ADDNEWRANGOTIPO(31, 30000,50000);
+call ADDNEWRANGOTIPO(1, 30000,50000);#Gerente General
+call ADDNEWRANGOTIPO(2, 20000,30000);#Gerente Sucursal
 
 
 DELIMITER //
@@ -91,7 +92,8 @@ BEGIN
     END IF;
 END //
 DELIMITER ;
-call ADDNEWUSEREMPL("empl","1234",31,50000);
+call ADDNEWUSEREMPL("GGeneral","1234",1,50000);
+call ADDNEWUSEREMPL("Gerente","1234",2,30000);
 
 DELIMITER //
 #VERIFICAR LOGIN
@@ -141,13 +143,13 @@ DELIMITER ;
 
 DELIMITER //
 #Agregar PRODUCTO
-CREATE PROCEDURE ADDNEWPRODUCTO(IN IN_NOMBRE VARCHAR(30), 
-                            IN IN_ACTIVO BOOLEAN,
+CREATE PROCEDURE ADDNEWPRODUCTO(IN IN_NOMBRE VARCHAR(30),
                             IN IN_PRECIO DECIMAL(10,2),
-                            IN IN_DESCRIPCION VARCHAR(50))
+                            IN IN_DESCRIPCION VARCHAR(50),
+                            IN IN_TIEMPO INT)
 BEGIN
-	INSERT INTO Producto(NOMBRE,ACTIVO, PRECIO, DESCRIPCION)
-	VALUES(IN_NOMBRE, IN_ACTIVO, IN_PRECIO, IN_DESCRIPCION);
+	INSERT INTO Producto(NOMBRE,ACTIVO, PRECIO, DESCRIPCION, TIEMPO)
+	VALUES(IN_NOMBRE, false, IN_PRECIO, IN_DESCRIPCION, IN_TIEMPO);
 END //
 DELIMITER ;
 
@@ -164,7 +166,7 @@ DELIMITER ;
 
 
 
-call addnewproducto("Coca-Cola",false,700,"Refrescante bebida carbonatada.");
+call addnewproducto("Coca-Cola",700,"Refrescante bebida carbonatada.",2);
 call setdispproducto("Coca-Cola", true);
 
 DELIMITER //
@@ -202,7 +204,7 @@ DELIMITER ;
 DELIMITER //
 CREATE PROCEDURE GETCOMBOPRODUCTO(IN IN_NOMBRE VARCHAR(30))
 BEGIN
-	SELECT p.IDPRODUCTO, p.NOMBRE, p.ACTIVO, p.PRECIO, p.DESCRIPCION, cp.CANT  
+	SELECT p.IDPRODUCTO, p.NOMBRE, p.ACTIVO, p.PRECIO, p.DESCRIPCION, cp.CANT 
     FROM Producto AS p INNER JOIN 
          ComboProducto AS cp ON (cp.IDPRODUCTO = p.IDPRODUCTO)  INNER JOIN
          Combo AS c ON (cp.IDCOMBO = c.IDCOMBO)
@@ -236,6 +238,7 @@ DELIMITER ;
 
 call addnewcombo("Pobre",false,3500,"Combo para universitarios.");
 call getcombos();
+call getproductos();
 call setdiscombo("Pobre",true);
 call SETCOMBOPRODUCTO("Pobre","Coca-Cola",2);
 

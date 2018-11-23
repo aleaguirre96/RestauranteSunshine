@@ -6,8 +6,10 @@
 package View;
 
 import Controller.Controlador;
+import Model.UserClient;
 import java.awt.Image;
 import java.awt.Toolkit;
+import javax.swing.JOptionPane;
 
 /** 
  *
@@ -185,8 +187,36 @@ public class Registrarse extends javax.swing.JFrame {
 
     private void jBConfirmarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBConfirmarActionPerformed
         // TODO add your handling code here:
+        addNuevoUser();
     }//GEN-LAST:event_jBConfirmarActionPerformed
 
+    private void addNuevoUser(){
+        if(validarCampos()){
+          String mensaje = Controlador.getCtr().setNewUsersClient(new UserClient(this.jTNombre.getText(),
+                  this.jTContrasena.getText(),0));
+          Controlador.getCtr().setUsersArray();
+          JOptionPane.showMessageDialog(null,mensaje);
+          limpiarCampos();
+        }else{
+          JOptionPane.showMessageDialog(null, "Llene los datos correspondientes");
+        }
+
+    }
+    
+    private void limpiarCampos(){
+         this.jTNombre.setText("");
+         this.jTContrasena.setText("");
+         this.jTConfirmacionContrasena.setText("");
+    }
+    
+    private boolean validarCampos(){
+        boolean result = true;
+        if(this.jTNombre.getText().isEmpty() || this.jTContrasena.getText().isEmpty() 
+                || this.jTConfirmacionContrasena.getText().isEmpty()
+                ||!(this.jTContrasena.getText().equals(this.jTConfirmacionContrasena.getText())))
+            result = false;
+        return result;
+    }
     /**
      * @param args the command line arguments
      */

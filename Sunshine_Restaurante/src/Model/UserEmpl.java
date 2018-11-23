@@ -11,18 +11,17 @@ package Model;
  * @author jose
  */
 public class UserEmpl extends User {
-   private int tipo;
+   
    private double salario;
     
     public UserEmpl(String name,String pass,int tipo) {
-        super(name, pass);
-        this.tipo = tipo;
+        super(name, pass, tipo);
         this.salario = 0;
     }
     
     public UserEmpl(String name,String pass,int tipo, double salario) {
-        super(name, pass);
-        this.tipo = tipo;
+        super(name, pass,tipo);
+        this.salario = salario;
     }
 
     public double getSalario() {
@@ -54,12 +53,6 @@ public class UserEmpl extends User {
         return super.getName(); //To change body of generated methods, choose Tools | Templates.
     }
     
-    public int getTipo() {
-        return tipo;
-    }
 
-    public void setTipo(int tipo) {
-        this.tipo = tipo;
-    }
 }
 

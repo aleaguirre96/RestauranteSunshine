@@ -7,6 +7,8 @@
 package View;
 
 import Controller.Controlador;
+import java.awt.Image;
+import java.awt.Toolkit;
 import javax.swing.JPanel;
 
 /**
@@ -18,7 +20,14 @@ public class Reportes extends javax.swing.JFrame {
     /** Creates new form ReporteSucursal */
     public Reportes() {
         initComponents();
-        
+        setIconImage(getIconImage());
+        this.setLocationRelativeTo(null);
+    }
+    
+    @Override
+    public Image getIconImage(){
+        Image retValue = Toolkit.getDefaultToolkit().getImage(ClassLoader.getSystemResource("Resources/icons2.png"));
+        return retValue;
     }
 
     public JPanel getjPSeleccionSucursal() {
@@ -39,6 +48,7 @@ public class Reportes extends javax.swing.JFrame {
         jComboBox2 = new javax.swing.JComboBox<>();
         jButton5 = new javax.swing.JButton();
         jBInicio = new javax.swing.JButton();
+        lblUp = new javax.swing.JLabel();
         jLImagen = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -90,12 +100,16 @@ public class Reportes extends javax.swing.JFrame {
         });
         getContentPane().add(jBInicio, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 10, 140, -1));
 
+        lblUp.setBackground(new java.awt.Color(255, 235, 238));
+        lblUp.setOpaque(true);
+        getContentPane().add(lblUp, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 760, 60));
+
         jLImagen.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resources/vinoConBlanco.jpg"))); // NOI18N
         jLImagen.setText("jLabel1");
         jLImagen.setMaximumSize(new java.awt.Dimension(760, 505));
         jLImagen.setMinimumSize(new java.awt.Dimension(760, 505));
         jLImagen.setPreferredSize(new java.awt.Dimension(760, 505));
-        getContentPane().add(jLImagen, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 760, 560));
+        getContentPane().add(jLImagen, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 50, 760, 450));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -151,6 +165,7 @@ public class Reportes extends javax.swing.JFrame {
     private javax.swing.JPanel jPSeleccionSucursal;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable jTable1;
+    private javax.swing.JLabel lblUp;
     // End of variables declaration//GEN-END:variables
 
 }

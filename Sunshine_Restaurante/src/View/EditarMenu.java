@@ -6,6 +6,8 @@
 package View;
 
 import Controller.Controlador;
+import java.awt.Image;
+import java.awt.Toolkit;
 
 /** 
  *
@@ -18,6 +20,14 @@ public class EditarMenu extends javax.swing.JFrame {
      */
     public EditarMenu() {
         initComponents();
+        setIconImage(getIconImage());
+        this.setLocationRelativeTo(null);
+    }
+    
+    @Override
+    public Image getIconImage(){
+        Image retValue = Toolkit.getDefaultToolkit().getImage(ClassLoader.getSystemResource("Resources/icons2.png"));
+        return retValue;
     }
 
     /**

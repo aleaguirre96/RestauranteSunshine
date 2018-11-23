@@ -12,8 +12,8 @@ package Model;
  */
 public class UserClient extends User{
 
-    public UserClient(String name, String pass) {
-        super(name,pass);
+    public UserClient(String name, String pass, int tipo) {
+        super(name,pass,tipo);
     }   
 
     @Override

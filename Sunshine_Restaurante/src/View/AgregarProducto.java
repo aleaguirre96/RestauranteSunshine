@@ -6,6 +6,11 @@
 package View;
 
 import Controller.Controlador;
+import Model.Producto;
+import Model.UserClient;
+import java.awt.Image;
+import java.awt.Toolkit;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -18,6 +23,14 @@ public class AgregarProducto extends javax.swing.JFrame {
      */
     public AgregarProducto() {
         initComponents();
+        setIconImage(getIconImage());
+        this.setLocationRelativeTo(null);
+    }
+    
+    @Override
+    public Image getIconImage(){
+        Image retValue = Toolkit.getDefaultToolkit().getImage(ClassLoader.getSystemResource("Resources/icons2.png"));
+        return retValue;
     }
 
     /**
@@ -29,17 +42,18 @@ public class AgregarProducto extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLNombre = new javax.swing.JLabel();
-        jLPrecio = new javax.swing.JLabel();
-        jLDuracion = new javax.swing.JLabel();
         jTNombre = new javax.swing.JTextField();
-        jTPrecio = new javax.swing.JTextField();
-        jTDuracion = new javax.swing.JTextField();
         jTDescripcion = new javax.swing.JTextField();
         jLTitulo = new javax.swing.JLabel();
         jBConfirmacion = new javax.swing.JButton();
-        jLDescripcion = new javax.swing.JLabel();
         jBInicio = new javax.swing.JButton();
+        jLNombre1 = new javax.swing.JLabel();
+        jLNombre2 = new javax.swing.JLabel();
+        jLNombre3 = new javax.swing.JLabel();
+        jLNombre4 = new javax.swing.JLabel();
+        jSpinnerPrecio = new javax.swing.JSpinner();
+        jSpinnerDuracion = new javax.swing.JSpinner();
+        shadowTable = new javax.swing.JLabel();
         jLImagen = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -47,21 +61,11 @@ public class AgregarProducto extends javax.swing.JFrame {
         setResizable(false);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLNombre.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
-        jLNombre.setText("Nombre");
-        getContentPane().add(jLNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 180, -1, -1));
+        jTNombre.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        getContentPane().add(jTNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 170, 250, 30));
 
-        jLPrecio.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
-        jLPrecio.setText("Precio");
-        getContentPane().add(jLPrecio, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 250, -1, -1));
-
-        jLDuracion.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
-        jLDuracion.setText("Duracion");
-        getContentPane().add(jLDuracion, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 320, -1, -1));
-        getContentPane().add(jTNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 180, 250, -1));
-        getContentPane().add(jTPrecio, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 240, 250, -1));
-        getContentPane().add(jTDuracion, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 310, 250, -1));
-        getContentPane().add(jTDescripcion, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 380, 250, -1));
+        jTDescripcion.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        getContentPane().add(jTDescripcion, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 370, 250, 30));
 
         jLTitulo.setFont(new java.awt.Font("Dialog", 1, 36)); // NOI18N
         jLTitulo.setForeground(new java.awt.Color(241, 234, 226));
@@ -69,13 +73,18 @@ public class AgregarProducto extends javax.swing.JFrame {
         getContentPane().add(jLTitulo, new org.netbeans.lib.awtextra.AbsoluteConstraints(214, 80, 360, -1));
 
         jBConfirmacion.setBackground(new java.awt.Color(241, 234, 226));
-        jBConfirmacion.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        jBConfirmacion.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jBConfirmacion.setForeground(new java.awt.Color(89, 17, 18));
+        jBConfirmacion.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resources/checked2.png"))); // NOI18N
         jBConfirmacion.setText("Crear");
-        getContentPane().add(jBConfirmacion, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 420, -1, -1));
-
-        jLDescripcion.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
-        jLDescripcion.setText("Descripcion");
-        getContentPane().add(jLDescripcion, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 390, -1, -1));
+        jBConfirmacion.setHorizontalTextPosition(javax.swing.SwingConstants.LEFT);
+        jBConfirmacion.setOpaque(false);
+        jBConfirmacion.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jBConfirmacionActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jBConfirmacion, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 430, 250, 40));
 
         jBInicio.setBackground(new java.awt.Color(241, 234, 226));
         jBInicio.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
@@ -95,6 +104,42 @@ public class AgregarProducto extends javax.swing.JFrame {
         });
         getContentPane().add(jBInicio, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 10, 140, -1));
 
+        jLNombre1.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        jLNombre1.setForeground(new java.awt.Color(241, 234, 226));
+        jLNombre1.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        jLNombre1.setText("Descripcion:");
+        getContentPane().add(jLNombre1, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 370, 230, -1));
+
+        jLNombre2.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        jLNombre2.setForeground(new java.awt.Color(241, 234, 226));
+        jLNombre2.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        jLNombre2.setText("Nombre:");
+        getContentPane().add(jLNombre2, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 170, 230, -1));
+
+        jLNombre3.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        jLNombre3.setForeground(new java.awt.Color(241, 234, 226));
+        jLNombre3.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        jLNombre3.setText("Precio:");
+        getContentPane().add(jLNombre3, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 230, 230, -1));
+
+        jLNombre4.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        jLNombre4.setForeground(new java.awt.Color(241, 234, 226));
+        jLNombre4.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        jLNombre4.setText("Duracion:");
+        getContentPane().add(jLNombre4, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 300, 230, -1));
+
+        jSpinnerPrecio.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        jSpinnerPrecio.setModel(new javax.swing.SpinnerNumberModel(2000.0d, 1.0d, null, 1.0d));
+        getContentPane().add(jSpinnerPrecio, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 230, 250, 30));
+
+        jSpinnerDuracion.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        jSpinnerDuracion.setModel(new javax.swing.SpinnerNumberModel(1, 1, null, 1));
+        getContentPane().add(jSpinnerDuracion, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 300, 250, 30));
+
+        shadowTable.setBackground(new java.awt.Color(152, 50, 39));
+        shadowTable.setOpaque(true);
+        getContentPane().add(shadowTable, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 70, 570, 440));
+
         jLImagen.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resources/vinoConBlanco.jpg"))); // NOI18N
         jLImagen.setText("jLabel1");
         jLImagen.setMaximumSize(new java.awt.Dimension(760, 505));
@@ -112,6 +157,38 @@ public class AgregarProducto extends javax.swing.JFrame {
         this.dispose();
     }//GEN-LAST:event_jBInicioActionPerformed
 
+    private void jBConfirmacionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBConfirmacionActionPerformed
+        // TODO add your handling code here:
+        addProducto();
+    }//GEN-LAST:event_jBConfirmacionActionPerformed
+
+    private void addProducto(){
+        if(validarCampos()){
+          String mensaje = Controlador.getCtr().setNewProducto(
+          new Producto(0,this.jTNombre.getText(),this.jTDescripcion.getText(),(double)this.jSpinnerPrecio.getValue(),
+                        false,(int)this.jSpinnerDuracion.getValue()));
+          Controlador.getCtr().setProductosArray();
+          
+          JOptionPane.showMessageDialog(null,mensaje);
+          limpiarCampos();
+        }else{
+          JOptionPane.showMessageDialog(null, "Llene los datos correspondientes");
+        }
+
+    }
+    
+    private void limpiarCampos(){
+         this.jTNombre.setText("");
+         this.jTDescripcion.setText("");
+    }
+    
+    private boolean validarCampos(){
+        boolean result = true;
+        if(this.jTNombre.getText().isEmpty() || this.jTDescripcion.getText().isEmpty())
+            result = false;
+        return result;
+    }
+    
     /**
      * @param args the command line arguments
      */
@@ -150,15 +227,16 @@ public class AgregarProducto extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jBConfirmacion;
     private javax.swing.JButton jBInicio;
-    private javax.swing.JLabel jLDescripcion;
-    private javax.swing.JLabel jLDuracion;
     private javax.swing.JLabel jLImagen;
-    private javax.swing.JLabel jLNombre;
-    private javax.swing.JLabel jLPrecio;
+    private javax.swing.JLabel jLNombre1;
+    private javax.swing.JLabel jLNombre2;
+    private javax.swing.JLabel jLNombre3;
+    private javax.swing.JLabel jLNombre4;
     private javax.swing.JLabel jLTitulo;
+    private javax.swing.JSpinner jSpinnerDuracion;
+    private javax.swing.JSpinner jSpinnerPrecio;
     private javax.swing.JTextField jTDescripcion;
-    private javax.swing.JTextField jTDuracion;
     private javax.swing.JTextField jTNombre;
-    private javax.swing.JTextField jTPrecio;
+    private javax.swing.JLabel shadowTable;
     // End of variables declaration//GEN-END:variables
 }

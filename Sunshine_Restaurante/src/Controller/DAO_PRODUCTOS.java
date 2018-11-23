@@ -29,7 +29,8 @@ public class DAO_PRODUCTOS extends DAO_Connector {
                                             rs.getString(2), //nombre
                                             rs.getString(5),
                                             rs.getBigDecimal(4).doubleValue(), //precio
-                                            rs.getBoolean(3) //activo
+                                            rs.getBoolean(3),
+                                            rs.getInt(6)//activo
                                               )); 
         }
         connection.close();
@@ -44,10 +45,10 @@ public class DAO_PRODUCTOS extends DAO_Connector {
         try{
             this.conectar();
             CallableStatement statemen = connection.prepareCall("{CALL ADDNEWPRODUCTO(?,?,?,?)}");
-            statemen.setString(1, newProd.getNombre()); 
-            statemen.setBoolean(2, newProd.isActivo());
-            statemen.setBigDecimal(3,new BigDecimal(newProd.getPrecio()));
-            statemen.setString(4, newProd.getDescripcion());
+            statemen.setString(1, newProd.getNombre());
+            statemen.setBigDecimal(2,new BigDecimal(newProd.getPrecio()));
+            statemen.setString(3, newProd.getDescripcion());
+            statemen.setInt(4, newProd.getTiempo());
             statemen.execute();
             statemen.close();
             mensaje = "Add_Prod: Producto Agregado.";

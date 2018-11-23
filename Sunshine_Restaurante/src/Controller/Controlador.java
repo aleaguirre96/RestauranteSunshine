@@ -215,6 +215,16 @@ public class Controlador {
     
     }
     
+    public User validarUser(String name, String pass){
+        User userVal = null;
+        for(int i =0;i<userApp.size();i++){
+            if(userApp.get(i).getName().equals(name) && userApp.get(i).getPass().equals(pass)){
+                userVal = userApp.get(i);
+                break;
+            }
+         }
+        return userVal;    
+    }
     
     
     

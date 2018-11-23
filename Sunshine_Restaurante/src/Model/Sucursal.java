@@ -12,9 +12,9 @@ package Model;
 public class Sucursal {
     
     private String ID;
-    private Gerente gerente;
+    private UserEmpl gerente;
     
-    void Sucursal(String ID, Gerente gerente){
+    void Sucursal(String ID, UserEmpl gerente){
         this.ID = ID;
         this.gerente = gerente;
     }
@@ -27,17 +27,4 @@ public class Sucursal {
         this.ID = ID;
     }
 
-    public Gerente getGerente() {
-        return gerente;
-    }
-
-    public void setGerente(Gerente gerente) {
-        this.gerente = gerente;
-    }
-    
-    
-    
-    
-    
-    
 }

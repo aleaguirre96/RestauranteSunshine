@@ -107,7 +107,8 @@ public class DAO_COMBOS extends DAO_Connector{
                             rs.getString(2), //nombre
                             rs.getString(5),
                             rs.getBigDecimal(4).doubleValue(), //precio
-                            rs.getBoolean(3)) //activo
+                            rs.getBoolean(3),
+                            rs.getInt(6)) //activo
                     ,rs.getInt(6));
                 }
                 connection.close(); 
