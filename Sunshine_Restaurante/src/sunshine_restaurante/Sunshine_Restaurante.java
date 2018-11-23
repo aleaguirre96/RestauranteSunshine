@@ -12,7 +12,6 @@ import View.Principal;
  * @author danip
  */
 public class Sunshine_Restaurante {
-
     /**
      * @param args the command line arguments
      */

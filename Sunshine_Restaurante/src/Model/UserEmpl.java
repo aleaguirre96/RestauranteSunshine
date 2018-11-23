@@ -9,9 +9,9 @@ package Model;
 /**
  *
  * @author jose
- */
+ *//*
 public class UserEmpl extends User {
-    private int tipo;
+   private int tipo;
     private double salario;
     
     public UserEmpl(String name,String pass,int tipo) {
@@ -62,4 +62,4 @@ public class UserEmpl extends User {
         this.tipo = tipo;
     }
 }
-
+*/

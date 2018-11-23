@@ -197,6 +197,10 @@ public class VentanaGerente extends javax.swing.JFrame {
 
     private void jBVerListaEmpleadosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBVerListaEmpleadosActionPerformed
         // TODO add your handling code here:
+        Controlador.getCtr().getListaEmpleados().setVisible(true);
+        this.dispose();
+        Controlador.getCtr().cargarDatosBase();
+        Controlador.getCtr().verListaEmpleados();
     }//GEN-LAST:event_jBVerListaEmpleadosActionPerformed
 
     private void jBVerReporteGeneralActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBVerReporteGeneralActionPerformed

@@ -77,7 +77,9 @@ public class Combo {
     public void setActivo(boolean activo) {
         this.activo = activo;
     }
-    
+    public Producto getProductoPos(int posProducto){
+        return (Producto)this.productosCombo.get(posProducto)[0];
+    }
     
     
 }

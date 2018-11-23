@@ -12,20 +12,25 @@ package Model;
 public class User {
     private String name;
     private String pass;
+    private String tipo;
 
-    protected String getName() {
+    public String getTipo() {
+        return tipo;
+    }
+
+    public String getName() {
         return name;
     }
 
-    protected void setName(String name) {
+    public void setName(String name) {
         this.name = name;
     }
 
-    protected String getPass() {
+    public String getPass() {
         return pass;
     }
 
-    protected void setPass(String pass) {
+    public void setPass(String pass) {
         this.pass = pass;
     }
     

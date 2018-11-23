@@ -10,6 +10,7 @@ import Model.UserClient;
 import Model.UserEmpl;
 import java.math.BigDecimal;
 import java.sql.CallableStatement;
+import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
@@ -39,6 +40,34 @@ public class DAO_Users extends DAO_Connector{
             throw e;    
         }
         return listaUsuarios;
+    }
+
+    public String getIp() {
+        return ip;
+    }
+
+    public String getPort() {
+        return port;
+    }
+
+    public String getDataBase() {
+        return dataBase;
+    }
+
+    public String getUrl() {
+        return url;
+    }
+
+    public String getUser() {
+        return user;
+    }
+
+    public String getPass() {
+        return pass;
+    }
+
+    public Connection getConnection() {
+        return connection;
     }
     
     public String addNewUserClient(UserClient newUserC){

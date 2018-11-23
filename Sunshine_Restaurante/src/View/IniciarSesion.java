@@ -8,7 +8,7 @@ package View;
 import Controller.Controlador;
 import Model.User;
 import Model.UserClient;
-import Model.UserEmpl;
+//import Model.UserEmpl;
 import java.awt.Image;
 import java.awt.Toolkit;
 import javax.swing.JOptionPane;
@@ -22,6 +22,9 @@ public class IniciarSesion extends javax.swing.JFrame {
     /**
      * Creates new form IniciarSesion
      */
+    
+    
+ 
     public IniciarSesion() {
         initComponents();
         setIconImage(getIconImage());

@@ -19,10 +19,13 @@ import View.Registrarse;
 import View.Reportes;
 import View.VentanaGerente;
 import View.VerMenu;
+import View.CrearCombo;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import View.VerListaEmpleados;
+import javax.swing.table.DefaultTableModel;
 
 /**
  *
@@ -36,11 +39,25 @@ public class Controlador {
     private RealizarCompra realizarCompra = new RealizarCompra();
     private Registrarse registrarse = new Registrarse();
     private AgregarProducto agregarProducto = new AgregarProducto();
-
     private EditarMenu editarMEnu = new EditarMenu();
     private VerMenu verMenu = new VerMenu();
+    private CrearCombo crearCombo = new CrearCombo();
     private VentanaGerente ventGerente = new VentanaGerente();
-    private ArrayList<User> userApp = new ArrayList<User>();
+    private VerListaEmpleados listaEmpleados= new VerListaEmpleados();
+
+    public CrearCombo getCrearCombo() {
+        return crearCombo;
+    }
+
+    public VentanaGerente getVentGerente() {
+        return ventGerente;
+    }
+
+    public VerListaEmpleados getListaEmpleados() {
+        return listaEmpleados;
+    }
+    
+    public ArrayList<User> userApp = new ArrayList<User>();
     private ArrayList<Producto> listaProductos = new ArrayList<Producto>();
     private ArrayList<Combo> listaCombos = new ArrayList<Combo>();
 
@@ -173,8 +190,26 @@ public class Controlador {
         return this.ventGerente;
     }
     
+    public void crearCombo(){}
+    public void crearProducto(){}
+    public void generarReporteMensual(){}
+    public void generarReportePorSucursal(){}
+    public void generarReporteGeneral(){}
+    public void registrarse(){}
+    public void logIn(){}
+    public void editarMenu(){}
+    public void verListaEmpleados(){
+        DefaultTableModel modelo = (DefaultTableModel) Controlador.getCtr().listaEmpleados.getjTListaDisponibles().getModel();
+        Object[] fila = new Object[modelo.getColumnCount()];
+        for(int i =0;i<userApp.size();i++){
+           
+            fila[0]=userApp.get(i).getName();
+            fila[1]=userApp.get(i).getTipo();
+            modelo.addRow(fila);
+        }
     
-   
+    }
+    
     
     
     
