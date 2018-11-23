@@ -33,10 +33,9 @@ public class User {
     
     
 
-    public User(String name, String pass, String tipo) {
+    public User(String name, String pass) {
         this.name = name;
         this.pass = pass;
-        this.tipo = tipo;
     }
     
     
