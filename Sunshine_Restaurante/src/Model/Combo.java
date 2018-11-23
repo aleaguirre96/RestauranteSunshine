@@ -37,6 +37,7 @@ public class Combo {
     public int getCantidadProductoPos(int posProducto){
         return (int)this.productosCombo.get(posProducto)[1];
     }
+    
 
     public int getID() {
         return ID;

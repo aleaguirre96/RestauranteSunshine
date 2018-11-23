@@ -9,6 +9,7 @@ import Model.Combo;
 import Model.Producto;
 import Model.User;
 import Model.UserClient;
+import Model.UserEmpl;
 import View.AgregarProducto;
 //import View.CrearCombo;
 import View.EditarMenu;
@@ -44,6 +45,7 @@ public class Controlador {
     private CrearCombo crearCombo = new CrearCombo();
     private VentanaGerente ventGerente = new VentanaGerente();
     private VerListaEmpleados listaEmpleados= new VerListaEmpleados();
+    
 
     public CrearCombo getCrearCombo() {
         return crearCombo;
@@ -198,14 +200,17 @@ public class Controlador {
     public void registrarse(){}
     public void logIn(){}
     public void editarMenu(){}
+    
     public void verListaEmpleados(){
         DefaultTableModel modelo = (DefaultTableModel) Controlador.getCtr().listaEmpleados.getjTListaDisponibles().getModel();
         Object[] fila = new Object[modelo.getColumnCount()];
         for(int i =0;i<userApp.size();i++){
-           
-            fila[0]=userApp.get(i).getName();
-            fila[1]=userApp.get(i).getTipo();
+         if(userApp.get(i) instanceof UserEmpl){ //se debe preguntar si es un tipo empleado
+            UserEmpl tmp = (UserEmpl) userApp.get(i); //hacemos el cast 
+            fila[0]= tmp.getName();
+            fila[1]= tmp.getTipo();  //optenemos los datos
             modelo.addRow(fila);
+         }
         }
     
     }

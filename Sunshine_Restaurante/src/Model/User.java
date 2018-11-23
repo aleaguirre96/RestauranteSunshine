@@ -12,11 +12,8 @@ package Model;
 public class User {
     private String name;
     private String pass;
-    private String tipo;
 
-    public String getTipo() {
-        return tipo;
-    }
+
 
     public String getName() {
         return name;
@@ -36,8 +33,10 @@ public class User {
     
     
 
-    public User(String name, String pass) {
+    public User(String name, String pass, String tipo) {
         this.name = name;
+        this.pass = pass;
+        this.tipo = tipo;
     }
     
     
