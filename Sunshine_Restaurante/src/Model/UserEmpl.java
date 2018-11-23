@@ -9,7 +9,7 @@ package Model;
 /**
  *
  * @author jose
- *//*
+ */
 public class UserEmpl extends User {
    private int tipo;
     private double salario;
@@ -62,4 +62,4 @@ public class UserEmpl extends User {
         this.tipo = tipo;
     }
 }
-*/
+

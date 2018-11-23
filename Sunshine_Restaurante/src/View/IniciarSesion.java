@@ -24,7 +24,7 @@ public class IniciarSesion extends javax.swing.JFrame {
      */
     
     
- 
+    
     public IniciarSesion() {
         initComponents();
         setIconImage(getIconImage());

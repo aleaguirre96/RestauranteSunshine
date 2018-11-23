@@ -44,6 +44,7 @@ public class Controlador {
     private CrearCombo crearCombo = new CrearCombo();
     private VentanaGerente ventGerente = new VentanaGerente();
     private VerListaEmpleados listaEmpleados= new VerListaEmpleados();
+    
 
     public CrearCombo getCrearCombo() {
         return crearCombo;
@@ -198,6 +199,7 @@ public class Controlador {
     public void registrarse(){}
     public void logIn(){}
     public void editarMenu(){}
+    
     public void verListaEmpleados(){
         DefaultTableModel modelo = (DefaultTableModel) Controlador.getCtr().listaEmpleados.getjTListaDisponibles().getModel();
         Object[] fila = new Object[modelo.getColumnCount()];
